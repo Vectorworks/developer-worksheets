@@ -1,6 +1,6 @@
 ## Worksheet Functions
 
-The entire list of worksheet functions can be found here: [Worksheet Functions](Worksheet%20Functions).
+The entire list of worksheet functions can be found here: [Worksheet Functions](Search%20Criteria%20Format.md).
 
 There are two basic types of functions: those that use the values you enter, and those that use information from objects in the drawing. The arguments required by the two function types are different.
 
@@ -10,10 +10,10 @@ There are two basic types of functions: those that use the values you enter, and
 
 ## Worksheet Criteria
 
-For details about how to specify criteria such as the object type, class, or visibility, refer to the following page: [Search Criteria Format](Search%20Criteria%20Format).
+For details about how to specify criteria such as the object type, class, or visibility, refer to the following page: [Search Criteria Format](Search%20Criteria%20Format.md).
 
 ## Version Information
 
-* [Vectorworks 2022 Worksheets](WS:Vectorworks%202022%20Worksheets)
+* [Vectorworks 2022 Worksheets](Versions/Vectorworks%202022.md)
 
-[Category:Worksheets]
+

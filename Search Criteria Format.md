@@ -249,7 +249,7 @@ The script criteria attribute specifiers are listed in the following table.
 | Descend into viewport annotations | INVIEWPORT | & (INVIEWPORT) |
 | Do not descend into non‐referenced design layer viewports | NOTINDLVP | & (NOTINDLVP) |
 | Do not descend into referenced design layer viewports | NOTINREFDLVP | & (NOTINREFDLVP) |
-| Attached Record | R | R IN ['Part Data'] |
+| Attached Record | R | R IN \[Part Data\] |
 | Class | C | C='Millwork' |
 | Layer | L | L='First Floor' |
 | Object Type | T | Type selector (see table) |
