@@ -1,6 +1,4 @@
-Update the developer-vectorworks Github repo:
-https://   TBD
-
+Tabellenfunktionen
 
 
 ## Contents
@@ -3122,8 +3120,7 @@ Diese Funktion ist auf Raumobjekte und dessen Unterobjekte anwendbar, die mit ei
 ```python
 In einer Filterzeile einer Objektliste, für alle Raumobjekte.
 =Objektdaten('Belag', 'PosNr', ', ') - Listet die Positionsnummer (bzw. Artikel- oder Bestellnummer), aller in einem Raum verwendeten Beläge auf, getrennt durch ein Komma.
-=Objektdaten('Belag', 'PosNr', '
-') - Listet die Positionsnummer aller in einem Raum verwendeten Beläge auf, jeweils in einer neuen Zeile.
+=Objektdaten('Belag', 'PosNr', '') - Listet die Positionsnummer aller in einem Raum verwendeten Beläge auf, jeweils in einer neuen Zeile.
 =Objektdaten('Belag', 'PosNr', ', ', 'Boden') - Listet die Positionsnummer aller in einem Raum verwendeten Beläge für Böden auf.
 =Objektdaten('Belag', 'PosNr', ', ', 'Wände') - Listet die Positionsnummer aller in einem Raum verwendeten Beläge für Wände auf.
 =Objektdaten('Belag', 'PosNr', ', ', 'Wände', 1) - Listet die Positionsnummer aller in einem Raum verwendeten Beläge für die erste Wand auf.
