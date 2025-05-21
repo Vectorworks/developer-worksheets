@@ -1,3 +1,5 @@
+Based on Vectorworks 2025 Update 5 (810264)
+
 ## Disclaimer
 
 All function descriptions below use US notation.

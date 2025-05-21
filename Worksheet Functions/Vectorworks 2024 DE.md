@@ -1,4 +1,6 @@
 
+Based on Vectorworks 2024 Update 7 (773964)
+
 == Allgemein ==
 
 {| border=0

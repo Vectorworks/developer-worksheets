@@ -6,9 +6,8 @@ Klicken Sie auf die entsprechende Version und Distribution, um die Liste der Tab
 
 |  | International | Deutsch
 | --- | --- | ---
-| 2025 | [U5 (810264)](Worksheet%20Functions/Vectorworks%202025%20U5%20(810264)%20US.md) | [U5 (810264)](Worksheet%20Functions/Vectorworks%202025%20U5%20(810264)%20DE.md)
-| 2024 | [U8 (791335)](Worksheet%20Functions/Vectorworks%202024%20U8%20(791335)%20US.md) | [U7 (773964)](Worksheet%20Functions/Vectorworks%202024%20U7%20(773964)%20DE.md)
-| 2023 | [U8 (733832)](Worksheet%20Functions/Vectorworks%202023%20U8%20(733832)%20US.md) | -
+| 2025 | [Latest](Worksheet%20Functions/Vectorworks%202025%20US.md) | [Latest](Worksheet%20Functions/Vectorworks%202025%20DE.md)
+| 2024 | [Latest](Worksheet%20Functions/Vectorworks%202024%20US.md) | [Latest](Worksheet%20Functions/Vectorworks%202024%20DE.md)
 
 ## Basic Information
 
