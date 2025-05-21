@@ -2,7 +2,7 @@
 
 Click on the appropirate version and distribution to see the worksheet functions list for it.
 
-Klicken Sie auf die entsprechende Version und Distribution, um die Liste der Tabellefunktionen dafür zu sehen.
+Klicken Sie auf die entsprechende Version und Distribution, um die Liste der Tabellenfunktionen dafür zu sehen.
 
 |  | International | Deutsch
 | --- | --- | ---

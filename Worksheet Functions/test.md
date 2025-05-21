@@ -1,63 +1,33 @@
-Worksheet functions
-
-Based on Vectorworks 2025 Update 5 (810264)
-
-## Disclaimer
-
-All function descriptions below use US notation.
-
-In European notation, the decimal "." should be "," and the separator "," should become ";".
-
- **❗❗❗ Note:** <span style='color:red'>This page is automatically generated.</span> If you see changes that need to be done, please contact [devsupport@vectorworks.net](mailto:devsupport@vectorworks.net).
+Update the developer-vectorworks Github repo:
+https://   TBD
 
 
 
 ## Contents
-- [General](#general)
-- [Logic](#logic)
-- [Lookup](#lookup)
-- [Math](#math)
-- [Objects](#objects)
-  - [General](#general)
-  - [Legacy](#legacy)
-  - [Material](#material)
-- [Specialized for Adapter](#specialized-for-adapter)
-- [Specialized for Assembly Frame Segment](#specialized-for-assembly-frame-segment)
-- [Specialized for Cable](#specialized-for-cable)
-- [Specialized for Circuit](#specialized-for-circuit)
-- [Specialized for Countertop](#specialized-for-countertop)
-- [Specialized for Curb](#specialized-for-curb)
-- [Specialized for Curtain Wall](#specialized-for-curtain-wall)
-- [Specialized for Device](#specialized-for-device)
-- [Specialized for Distributor Object](#specialized-for-distributor-object)
-- [Specialized for Door](#specialized-for-door)
-- [Specialized for Door and Window Assembly](#specialized-for-door-and-window-assembly)
-- [Specialized for Door CW](#specialized-for-door-cw)
-- [Specialized for Fence](#specialized-for-fence)
-- [Specialized for Hardscape](#specialized-for-hardscape)
-- [Specialized for Hedgerow](#specialized-for-hedgerow)
-- [Specialized for Landscape Area](#specialized-for-landscape-area)
-- [Specialized for Lighting Device](#specialized-for-lighting-device)
-- [Specialized for Marionette Object](#specialized-for-marionette-object)
-- [Specialized for Panel Connector](#specialized-for-panel-connector)
-- [Specialized for Plant](#specialized-for-plant)
-- [Specialized for Railing](#specialized-for-railing)
-- [Specialized for Railing/Fence](#specialized-for-railingfence)
-- [Specialized for Roof](#specialized-for-roof)
-- [Specialized for Site Model](#specialized-for-site-model)
-- [Specialized for Slab](#specialized-for-slab)
-- [Specialized for Socket](#specialized-for-socket)
-- [Specialized for Space](#specialized-for-space)
-- [Specialized for Structural Member](#specialized-for-structural-member)
-- [Specialized for Wall](#specialized-for-wall)
-- [Specialized for WinDoor 6.0](#specialized-for-windoor-60)
-- [Specialized for Window](#specialized-for-window)
-- [Specialized for Window CW](#specialized-for-window-cw)
-- [Text](#text)
+- [Generäl](#Generäl)
+- [Logic](#Logic)
+- [Lookup](#Lookup)
+- [Math](#Math)
+- [Objects](#Objects)
+  - [General](#General)
+  - [Legacy](#Legacy)
+  - [Material](#Material)
+- [Specialized for Curb](#Specialized-for-Curb)
+- [Specialized for Curtain Wall](#Specialized-for-Curtain-Wall)
+- [Specialized for Hardscape](#Specialized-for-Hardscape)
+- [Specialized for Hedgerow](#Specialized-for-Hedgerow)
+- [Specialized for Landscape Area](#Specialized-for-Landscape-Area)
+- [Specialized for Plant](#Specialized-for-Plant)
+- [Specialized for Roof](#Specialized-for-Roof)
+- [Specialized for Site Model](#Specialized-for-Site-Model)
+- [Specialized for Slab](#Specialized-for-Slab)
+- [Specialized for Space](#Specialized-for-Space)
+- [Specialized for Wall](#Specialized-for-Wall)
+- [Text](#Text)
 
 ___
 
-## General
+## Generäl
 
 
 #### __RunScript(scriptPath [, functionName])__ ####
@@ -101,7 +71,7 @@ Creates a database of objects that meet the criteria.
 
 ```
 
-#### __DatabaseByScript([scriptPath], scriptName, ...params...)__ ####
+#### __DatabaseByäöüß([scriptPath], scriptName, ...params...)__ ####
 
 Runs a script to create a database of objects.
 
@@ -195,7 +165,7 @@ Use value_when_error when value resolved to an error, otherwise use the value it
 
 
 
-#### __if((logical_test), value_if_true, value_if_false)__ ####
+#### __IF((logical_test), value_IF_true, value_IF_false)__ ####
 
 Use value_if_true if logical_test is true, value_is_false if logical_test is false.
 
@@ -702,6 +672,38 @@ Available options for param_index:
 10 -	Standard Description;
 
 
+```python
+Available options for param_index:
+	1 - Is classified
+	2 - Standard Name
+	3 - Classification Code
+	4 - Classification Description
+	5 - Classification System
+	6 - Standard Source
+	7 - Standard Edition
+	8 - Standard Edition Date
+	9 -	Standard Location
+	10 - Standard Description;
+
+Examples:
+	Database header cell:
+	=ObjectData('Classification', 1, 1)        		Returns True if the Primary Classification has value for each object in the DB row.
+
+	=ObjectData('Classification', 1, 2)        		Returns Classification Rule Set name set to the Primary Classification for each object in the DB row.
+
+	=ObjectData('Classification', 2, 5)        		Returns Classification System name set to the Secondary Classification for each object in the DB row.
+
+	=ObjectData('Classification', 3, 10)       		Returns Classification Standard Description set to the Tertiary Classification for each object in the DB row.
+
+	Spreadsheet cell:
+	=ObjectData(SEL=TRUE, 'Classification', 1, 1)    Returns True if the Primary Classification has value for the selected 	object.
+
+	=ObjectData(SEL=TRUE, 'Classification', 1, 2)    Returns Classification Rule Set name set to the Primary Classification for the selected object.
+
+	=ObjectData(SEL=TRUE, 'Classification', 2, 5)    Returns Classification System name set to the Secondary Classification for the selected object.
+
+	=ObjectData(SEL=TRUE, 'Classification', 3, 10)   Returns Classification Standard Description set to the Tertiary Classification for the selected object.
+```
 
 #### __ObjectData('component', <value> [, <component index>])__ ####
 
@@ -711,6 +713,7 @@ The following values are supported: "name", "function", "class", "class desc", "
 
 See the example for more details.
 
+![alt text](images/)
 
 ```python
 Available options for <value>:
@@ -850,6 +853,7 @@ Spreadsheet cell:
 
 Returns the object type ID.
 
+![alt text](images/)
 
 ```python
 Database header cell:
@@ -938,7 +942,7 @@ Spreadsheet cell:
 
 ```
 
-#### __XCoordinate()__ ####
+#### __Xcoordinate()__ ####
 
 Returns the X coordinate of the insertion point for symbols, point plug-in objects, and loci. The returned value is relative to the user origin.
 
@@ -949,7 +953,7 @@ Database header cell:
 
 ```
 
-#### __YCoordinate()__ ####
+#### __Ycoordinate()__ ####
 
 Returns the Y coordinate of the insertion point for symbols, point plug-in objects, and loci. The returned value is relative to the user origin.
 
@@ -960,7 +964,7 @@ Database header cell:
 
 ```
 
-#### __ZCoordinate()__ ####
+#### __Zcoordinate()__ ####
 
 Returns the Z coordinate of the insertion point for symbols, point plug-in objects, and loci. The returned value is relative to the object's layer plane.
 
@@ -2210,249 +2214,6 @@ Construction info
 
 ```
 
-## Specialized for Adapter
-
-
-#### __ObjectData('eval adapter plug device', '<RecordName>', '<FieldName>')__ ####
-
-Get parameter value or attached record field from the adapter's plug device.
-
-
-
-#### __ObjectData('eval adapter plug socket', '<RecordName>', '<FieldName>')__ ####
-
-Get parameter value or attached record field from the adapter's plug socket.
-
-
-
-## Specialized for Assembly Frame Segment
-
-
-#### __Depth(criteria)__ ####
-
-
-
-
-
-#### __Width(criteria)__ ####
-
-
-
-
-
-#### __Length(criteria)__ ####
-
-
-
-
-
-## Specialized for Cable
-
-
-#### __ObjectData('cable break', '<DataSelector>', [<Break Index>)]__ ####
-
-Get cable break data. Data selectors - 'Name'. If the function is called on a cable break subpart there is no need to specify the break index. If the function is called on a cable object you have to specify the break index.
-
-
-
-#### __ObjectData('cable section', '<DataSelector>', [<Section Index>)], [<Part Index>)]__ ####
-
-Get cable section data. Data selectors - 'Name', 'Parts Ordered'. 'Parts Ordered' is read only. If the function is called on a cable section subpart there is no need to specify the section index. If the function is called on a cable object you have to specify the section index. Optionally, for 'Parts Ordered' you can specify part index which to display.
-
-
-
-#### __Length('cable section', '<DataSelector>', [<Section Index>)]__ ####
-
-Get cable section length. Data selectors - 'Length', 'Start Slack', 'End Slack', 'Swag', 'Total Vertical Drop'. 'Length' and 'Total Vertical Drop' are read only. If the function is called on a cable section subpart there is no need to specify the section index. If the function is called on a cable object you have to specify the section index.
-
-
-
-## Specialized for Circuit
-
-
-#### __ObjectData('eval circuit destination adapter', '<RecordName>', '<FieldName>')__ ####
-
-Get parameter value or attached record field from the circuit's destination adapter.
-
-
-
-#### __ObjectData('eval circuit destination device', '<RecordName>', '<FieldName>')__ ####
-
-Get parameter value or attached record field from the circuit's destination device.
-
-
-
-#### __ObjectData('eval circuit destination socket', '<RecordName>', '<FieldName>')__ ####
-
-Get parameter value or attached record field from the circuit's destination socket.
-
-
-
-#### __ObjectData('eval circuit drop points', ['<RecordName>'], ['<FieldName>'], ['ignoreEnds'])__ ####
-
-List any intermediate drop point ID’s, parameter values or attached record fields through which a circuit passes. Add ignoreEnds to not list the drop points, located at the begging or at the end of the route. The drawing needs to be analyzed.
-
-
-
-#### __ObjectData('eval circuit route', ['<RecordName>'], ['<FieldName>'])__ ####
-
-Get path IDs, parameter values or attached record fields from the circuit's used cable paths. The drawing needs to be analyzed.
-
-
-
-#### __ObjectData('eval circuit source adapter', '<RecordName>', '<FieldName>')__ ####
-
-Get parameter value or attached record field from the circuit's source adapter.
-
-
-
-#### __ObjectData('eval circuit source device', '<RecordName>', '<FieldName>')__ ####
-
-Get parameter value or attached record field from the circuit's source device.
-
-
-
-#### __ObjectData('eval circuit source socket', '<RecordName>', '<FieldName>')__ ####
-
-Get parameter value or attached record field from the circuit's source socket.
-
-
-
-## Specialized for Countertop
-
-
-#### __Weight()__ ####
-
-Returns the net weight of the Countertop or any Countertop subpart. To have a weight, a subpart must have a material with a set density.
-
-
-
-#### __Weight('gross')__ ####
-
-Returns the gross weight of the Countertop or any Countertop subpart. To have a weight, a subpart must have a material with a set density.
-
-
-
-#### __Weight('net')__ ####
-
-Returns the gross weight of the Countertop or any Countertop subpart. To have a weight, a subpart must have a material with a set density.
-
-
-
-#### __ObjectData('backsplash profile')__ ####
-
-Returns the name of the backsplash profile. Applicable to the countertop object and backsplash subpart.
-
-
-
-#### __ObjectData('edge profile')__ ####
-
-Returns the name of the edge/trim profile. Applicable to the countertop object and profile and trim subparts.
-
-
-
-#### __ObjectData('joint type')__ ####
-
-Returns the joint type of waterfall edge subparts.
-
-
-
-#### __ObjectData('style name')__ ####
-
-Returns the name of the plug-in style used by the countertop object.
-
-
-
-#### __Thickness()__ ####
-
-Returns the thickness of the countertop surface, trim, backsplashes or waterfall edges. For the countertop object, this function will return the thickness of the countertop surface.
-
-
-
-#### __Width('bounding box')__ ####
-
-Returns the width of the bounding box of the countertop object or countertop surface.
-
-
-
-#### __Height()__ ####
-
-Returns the Z-height of trim and backsplashes.
-
-
-
-#### __Height('bounding box')__ ####
-
-Returns the height of the bounding box of the countertop object or countertop surface.
-
-
-
-#### __Count('cutouts')__ ####
-
-Returns the number of cutouts in the countertop object or countertop surface. Both 2D and 3D cutouts are included.
-
-
-
-#### __Area()__ ####
-
-Returns the area of the outer faces of waterfall edges.
-
-
-
-#### __Area('bounding box')__ ####
-
-Returns the area of the bounding box of the countertop object or countertop surface.
-
-
-
-#### __Area('cutouts')__ ####
-
-Returns the total area of cutouts in the countertop. All 2D and 3D cutouts are taken into account. The function is only applicable to the countertop object and the countertop surface subpart.
-
-
-
-#### __Area('gross')__ ####
-
-Returns the gross area of the countertop. No cutouts are taken into account. The function is only applicable to the countertop object and the countertop surface subpart.
-
-
-
-#### __Area('net')__ ####
-
-Returns the net area of the countertop. All 2D and 3D cutouts are taken into account. The function is only applicable to the countertop object and the countertop surface subpart.
-
-
-
-#### __Perim()__ ####
-
-Returns the perimeter of the countertop object or countertop surface. The countertop overhangs will be included in the perimeter.
-
-
-
-#### __Length()__ ####
-
-Returns the length of edge profiles, trim, backsplashes or waterfall edges. The length is measured along the outer edge of the subart.
-
-
-
-#### __Volume()__ ####
-
-Returns the net volume of the Countertop or any Countertop subpart.
-
-
-
-#### __Volume('gross')__ ####
-
-Returns the gross volume of the Countertop or any Countertop subpart. Cutouts and edge profiles are ignored.
-
-
-
-#### __Volume('net')__ ####
-
-Returns the net volume of the Countertop or any Countertop subpart.
-
-
-
 ## Specialized for Curb
 
 
@@ -2572,924 +2333,6 @@ Spreadsheet cell:
 =CurtWallPnlAreaNet(t=wall, 'Class-1') returns the combined net area of the curtain wall panels assigned to the class “Class-1” for all curtain walls in the drawing
 
 ```
-
-## Specialized for Device
-
-
-#### __ObjectData('eval equipment item', '<RecordName>', '<FieldName>')__ ####
-
-Get parameter value or attached record field from the device's corresponding equipment item.
-
-
-
-## Specialized for Distributor Object
-
-
-#### __ObjectData('eval schematic device', '<RecordName>', '<FieldName>')__ ####
-
-Get parameter value or attached record field from the objects's schematic device.
-
-
-
-## Specialized for Door
-
-
-#### __Angle('energos')__ ####
-
-Get the orientation from the north used in the Energos calculations for this object.
-
-
-
-#### __Volume(criteria, 'door jamb')__ ####
-
-Returns the volume the jamb.
-
-
-```python
-Database header cell:
-=VOLUME('door jamb')     Returns the volume the jamb.
-
-Spreadsheet cell:
-=VOLUME(SEL, 'door jamb')    Returns the volume the jamb.
-
-```
-
-#### __Volume(criteria, 'door sashes')__ ####
-
-Returns the total volume all sashes (including sidelight and transom sashes).
-
-
-```python
-Database header cell:
-=VOLUME('door sashes')     Returns the total volume all sashes (including sidelight and transom sashes).
-
-Spreadsheet cell:
-=VOLUME(SEL, 'door sashes')    Returns the total volume all sashes (including sidelight and transom sashes).
-
-```
-
-#### __Volume(criteria, 'glazing all')__ ####
-
-Returns the total volume of all glazing.
-
-
-```python
-Database header cell:
-=VOLUME('glazing all')     Returns the total volume of all glazing.
-
-Spreadsheet cell:
-=VOLUME(SEL, 'glazing all')    Returns the total volume of all glazing.
-
-```
-
-#### __Volume(criteria, 'glazing for leaves')__ ####
-
-Returns the volume of glazing for all leaves (including vision panels).
-
-
-```python
-Database header cell:
-=VOLUME('glazing for leaves')     Returns the volume of glazing for all leaves (including vision panels).
-
-Spreadsheet cell:
-=VOLUME(SEL, 'glazing for leaves')    Returns the volume of glazing for all leaves (including vision panels).
-
-```
-
-#### __Volume(criteria, 'glazing for sidelights')__ ####
-
-Returns the volume of glazing for all sidelights.
-
-
-```python
-Database header cell:
-=VOLUME('glazing for sidelights')     Returns the volume of glazing for all sidelights.
-
-Spreadsheet cell:
-=VOLUME(SEL, 'glazing for sidelights')    Returns the volume of glazing for all sidelights.
-
-```
-
-#### __Volume(criteria, 'glazing for transom')__ ####
-
-Returns the volume of glazing for the transom.
-
-
-```python
-Database header cell:
-=VOLUME('glazing for transom')     Returns the volume of glazing for the transom.
-
-Spreadsheet cell:
-=VOLUME(SEL, 'glazing for transom')    Returns the volume of glazing for the transom.
-
-```
-
-#### __Volume(criteria, 'leaf panels')__ ####
-
-Returns the total volume of the leaf panels.
-
-
-```python
-Database header cell:
-=VOLUME('leaf panels')     Returns the total volume of the leaf panels.
-
-Spreadsheet cell:
-=VOLUME(SEL, 'leaf panels')    Returns the total volume of the leaf panels.
-
-```
-
-#### __Volume(criteria, 'leaf stiles and rails')__ ####
-
-Returns the total volume of the leaf rails, and stiles.
-
-
-```python
-Database header cell:
-=VOLUME('leaf stiles and rails')     Returns the total volume of the leaf rails and stiles.
-
-Spreadsheet cell:
-=VOLUME(SEL, 'leaf stiles and rails')    Returns the total volume of the leaf rails and stiles.
-
-```
-
-## Specialized for Door and Window Assembly
-
-
-#### __Depth(criteria)__ ####
-
-
-
-
-
-#### __Width(criteria)__ ####
-
-
-
-
-
-#### __Height(criteria)__ ####
-
-
-
-
-
-#### __Area(criteria)__ ####
-
-
-
-
-
-#### __Area(criteria)__ ####
-
-Returns the total glazing area for all objects in the Assembly.
-
-
-
-## Specialized for Door CW
-
-
-#### __Angle('energos')__ ####
-
-Get the orientation from the north used in the Energos calculations for this object.
-
-
-
-## Specialized for Fence
-
-
-#### __Depth('Gravel Board')__ ####
-
-The function is applicable to Fence object and Gravel Board subpart.
-Returns the depth of the gravel board, if active.
-
-
-
-#### __Depth('Horizontal Boards')__ ####
-
-The function is applicable to Fence object and Infill subpart.
-Returns the profile thickness. If the fence has different Infill Type, returns N/A.
-
-
-
-#### __Depth('Panels')__ ####
-
-The function is applicable to Fence object and Infill subpart.
-Returns the profile depth. If the fence has different Infill Type, returns N/A.
-
-
-
-#### __Depth('Rail', <Index>)__ ####
-
-The function is applicable to:
-
-Fence object: returns the depth of the selected rail.
-
-Rail subpart: returns the depth of the rail. If the rail doesn't correspond to the selected index, returns N/A.
-
-
-
-#### __Depth('Rails')__ ####
-
-The function is applicable to rail subparts: returns the depth of the rail.
-
-
-
-#### __Depth('Vertical Boards')__ ####
-
-The function is applicable to Fence object and Infill subpart.
-Returns the profile width. If the fence has different Infill Type, returns N/A.
-
-
-
-#### __FootPrintArea('Corner Footers')__ ####
-
-The function is applicable to:
-
-Fence object: returns the total footprint area of all footers.
-
-Footer subpart: returns the footprint area of the footer. If the footer is not corner, returns N/A.
-
-
-
-#### __FootPrintArea('Footers')__ ####
-
-The function is applicable to:
-
-Fence object: returns the total footprint area of all footers.
-
-Footer subpart: returns the footprint area of the footer.
-
-
-
-#### __FootPrintArea('Gate Footers')__ ####
-
-The function is applicable to:
-
-Fence object: returns the total footprint area of all footers.
-
-Footer subpart: returns the footprint area of the footer. If the footer is not gate, returns N/A.
-
-
-
-#### __FootPrintArea('Running Footers')__ ####
-
-The function is applicable to:
-
-Fence object: returns the total footprint area of all footers.
-
-Footer subpart: returns the footprint area of the footer. If the footer is not running, returns N/A.
-
-
-
-#### __ObjectData('Footer Type')__ ####
-
-The function is applicable to Footer subpart only.
-
-Returns the type of the footer. It can be 'Corner Footer', 'Running Footer' or 'Gate Footer'.
-
-
-
-#### __ObjectData('Infill Type')__ ####
-
-The function is applicable to Infill subpart only.
-
-Returns the type of the infill. It can be 'Preconstructed Panel', 'Vertical Board' or 'Horizontal Board'.
-
-
-
-#### __ObjectData('Name')__ ####
-
-The function is applicable to all Fence subparts: Post, Gate, Infill, and Rail.
-
-Returns the name of the used symbol definition.
-
-
-
-#### __ObjectData('Post Type')__ ####
-
-The function is applicable to Post subpart only.
-
-Returns the type of the post. It can be 'Corner Post', 'Running Post' or 'Gate Post'.
-
-
-
-#### __ObjectData('Rail Index')__ ####
-
-The function is applicable to Rail subpart only.
-
-Returns the index of the rail type, starting from index 1.
-
-
-
-#### __Width('Horizontal Boards')__ ####
-
-The function is applicable to Fence object and Infill subpart.
-Returns the profile width. If the fence has different Infill Type, returns N/A.
-
-
-
-#### __Width('Vertical Boards')__ ####
-
-The function is applicable to Fence object and Infill subpart.
-Returns the profile thickness. If the fence has different Infill Type, returns N/A.
-
-
-
-#### __Height('Corner Footers')__ ####
-
-The function is applicable to:
-
-Fence object: returns the sum of all corner footers.
-
-Footer subpart: returns the height of the footer, which is equal to the (depth below grade + drainage layer) of the related footer type. If the footer type is not corner, returns N/A.
-
-
-
-#### __Height('Corner Posts')__ ####
-
-The function is identical to Length('Corner Posts').
-
-
-
-#### __Height('Fabric')__ ####
-
-The function is applicable to:
-
-Fence object: returns the height of the fabric subpart ( if there are more than 1, returns the height of the first ).
-
-Rail subpart: returns height only if the rail is of type fabric.
-
-
-
-#### __Height('Footers')__ ####
-
-The function is applicable to:
-
-Fence object: returns the sum of all footers.
-
-Footer subpart: returns the height of the footer, which is equal to the (depth below grade + drainage layer) of the related footer type.
-
-
-
-#### __Height('Gate Footers')__ ####
-
-The function is applicable to:
-
-Fence object: returns the sum of all gate footers.
-
-Footer subpart: returns the height of the footer, which is equal to the (depth below grade + drainage layer) of the related footer. If the footer type is not gate, returns N/A.
-
-
-
-#### __Height('Gate Posts')__ ####
-
-The function is identical to Length('Gate Posts').
-
-
-
-#### __Height('Gates')__ ####
-
-The function is applicable to Gate subpart only. Returns the height of the gate.
-
-
-
-#### __Height('Gravel Board')__ ####
-
-The function is applicable to Fence object and Gravel Board subpart.
-Returns the height of the gravel board, if active.
-
-
-
-#### __Height('Panels')__ ####
-
-The function is applicable to Fence object and Infill subpart.
-Returns the panel height. If the fence has different Infill type, returns N/A.
-
-
-
-#### __Height('Posts')__ ####
-
-The function is identical to Length('Posts').
-
-
-
-#### __Height('Rail', <Index>)__ ####
-
-The function is applicable to:
-
-Fence object: returns the height of the <Index> rail.
-
-Rail subpart: returns the height of the rail. If the rail doesn't correspond to the selected index, returns N/A.
-
-
-
-#### __Height('Rails')__ ####
-
-The function is applicable to:
-
-Rail subpart: returns the height of the rail.
-
-
-
-#### __Height('Running Footers')__ ####
-
-The function is applicable to:
-
-Fence object: returns the sum of all running footers.
-
-Footer subpart: returns the height of the footer, which is equal to the (depth below grade + drainage layer) of the related footer type. If the footer type is not running, returns N/A.
-
-
-
-#### __Height('Running Posts')__ ####
-
-The function is identical to Length('Running Posts').
-
-
-
-#### __Height('Top Line Above Grade')__ ####
-
-The function is applicable to the Fence object.
-
-If the 'Infill Type' is 'Rails Only': returns the highest top elevation of all rails.
-
-Otherwise: returns the 'Top Line Above Grade' field.
-
-
-
-#### __Count('Corner Footers')__ ####
-
-The function is applicable to:
-
-Fence object: returns the count of all corner footers.
-
-Footer subpart: returns 1 for any corner footer. If the footer is not corner, returns N/A.
-
-
-
-#### __Count('Corner Posts')__ ####
-
-The function is applicable to:
-
-Fence object: returns the total count of corner posts.
-
-Post subpart: returns 1 for any corner post.
-
-
-
-#### __Count('Fabric')__ ####
-
-The function is applicable to:
-
-Fence object: returns the count of all rails that are treated as fabric.
-
-Rail subpart: returns 1 if the rail is fabric.
-
-
-
-#### __Count('Footers')__ ####
-
-The function is applicable to:
-
-Fence object: returns the count of all footers.
-
-Footer subpart: returns 1 for any type of footer.
-
-
-
-#### __Count('Gate Footers')__ ####
-
-The function is applicable to:
-
-Fence object: returns the count of all gate footers.
-
-Footer subpart: returns 1 for any gate footer. If footer is not gate, returns N/A.
-
-
-
-#### __Count('Gate Posts')__ ####
-
-The function is applicable to:
-
-Fence object: returns the total count of gate posts.
-
-Post subpart: returns 1 for any gate post.
-
-
-
-#### __Count('Gates')__ ####
-
-The function is applicable to:
-
-Fence object: returns the number of gates in the fence object.
-
-Gate subpart: returns 1 for any gate.
-
-
-
-#### __Count('Gravel Board')__ ####
-
-The function is applicable to:
-
-Fence object: returns number of gravel boards if the option is active.
-
-Gravel Board subpart: returns 1.
-
-
-
-#### __Count('Horizontal Boards')__ ####
-
-The function is applicable to:
-
-Fence object: returns the number of horizontal boards in the object.
-
-Infill subpart: returns 1 for any horizontal board infill. If the fence has different Infill Type, returns N/A.
-
-
-
-#### __Count('Panels')__ ####
-
-The function is applicable to:
-
-Fence object: returns the number of panels in the object.
-
-Infill subpart: returns 1 for any panel infill. If the fence has different Infill Type, returns N/A.
-
-
-
-#### __Count('Posts')__ ####
-
-The function is applicable to:
-
-Fence object: returns the total count of posts.
-
-Post subpart: returns 1 for any type of post.
-
-
-
-#### __Count('Rail', <Index>)__ ####
-
-The function is applicable to:
-
-Fence object: returns 1 if <Index> is valid one or 0 if it is out of bounds.
-
-Rail subpart: returns 1 if the rail corresponds to the selected index. Otherwise, returns N/A.
-
-
-
-#### __Count('Rails')__ ####
-
-The function is applicable to:
-
-Fence object: returns the count of all rail settings.
-
-Rail subpart: returns 1 for any rail.
-
-
-
-#### __Count('Running Footers')__ ####
-
-The function is applicable to:
-
-Fence object: returns the count of all running footers.
-
-Footer subpart: returns 1 for any running footer. If the footer is not running, returns N/A.
-
-
-
-#### __Count('Running Posts')__ ####
-
-The function is applicable to:
-
-Fence object: returns the total count of running posts.
-
-Post subpart: returns 1 for any running post.
-
-
-
-#### __Count('Vertical Boards')__ ####
-
-The function is applicable to:
-
-Fence object: returns the number of vertical boards in the object.
-
-Infill subpart: returns 1 for any vertical board infill. If the fence has different Infill Type, returns N/A.
-
-
-
-#### __Length('2D')__ ####
-
-The function is applicable to the Fence object.
-
-Returns the 2D length of the offset object path.
-
-
-
-#### __Length('3D')__ ####
-
-The function is applicable to the Fence object.
-
-Returns the 3D length of the offset object path.
-
-
-
-#### __Length('Corner Posts')__ ####
-
-The function is applicable to:
-
-Fence object: returns the sum of all post length.
-
-Post subpart: returns the length of the post, counted from top to bottom of depth below grade. If the post is not corner, returns N/A.
-
-
-
-#### __Length('Fabric')__ ####
-
-The function is applicable to:
-
-Fence object: return the total length of all fabric rails with equal index. If there are multiple fabric rails, selects the first one.
-
-Rail subpart: returns the length of the rail. If the rail isn't fabric, returns N/A.
-
-
-
-#### __Length('Gate Posts')__ ####
-
-The function is applicable to:
-
-Fence object: returns the sum of all post length.
-
-Post subpart: returns the length of the post, counted from top to bottom of depth below grade. If the post is not gate, returns N/A.
-
-
-
-#### __Length('Gates')__ ####
-
-The function is applicable to:
-
-Fence object: returns the sum of all gate lengths.
-
-Gate subpart: return the length along the fence line of this Gate.
-
-
-
-#### __Length('Gravel Board')__ ####
-
-The function is applicable to:
-
- returns the sum length of all gravel boards.
-
-Gravel Board subpart: returns the length of the gravel board.
-
-
-
-#### __Length('Horizontal Boards')__ ####
-
-The function is applicable to:
-
-Fence object: returns the sum of all horizontal board lengths.
-
-Infill subpart: returns the length of the horizontal board. It is defined as the distance/arc length from the start post to the end (depending on the object path). If the fence has different Infill Type, returns N/A.
-
-
-
-#### __Length('Panels')__ ####
-
-The function is applicable to:
-
-Fence object: returns the sum of all panel lengths.
-
-Infill subpart: returns the length of the panel. If the fence has different Infill Type, returns N/A.
-
-
-
-#### __Length('Posts')__ ####
-
-The function is applicable to:
-
-Fence object: returns the sum of all post length.
-
-Post subpart: returns the length of the post, counted from top to bottom of depth below grade.
-
-
-
-#### __Length('Rail', <Index>)__ ####
-
-The function is applicable to:
-
-Fence object: returns the total length of all rails with index <Index>.
-
-Rail subpart: return the length of the rail. If the rail doesn't correspond to the selected index, returns N/A.
-
-
-
-#### __Length('Rails')__ ####
-
-The function is applicable to:
-
-Fence object: returns the total length of all rails.
-
-Rail subpart: returns the length of the rail.
-
-
-
-#### __Length('Running Posts')__ ####
-
-The function is applicable to:
-
-Fence object: returns the sum of all post length.
-
-Post subpart: returns the length of the post, counted from top to bottom of depth below grade. If the post is not running, returns N/A.
-
-
-
-#### __Length('Vertical Boards')__ ####
-
-The function is applicable to:
-
-Fence object: returns the sum of all vertical boards lengths.
-
-Infill subpart: returns the length of the vertical board. It is defined from the bottom position of the board to top. If the fence has different Infill Type, returns N/A.
-
-
-
-#### __SurfaceArea('Fabric')__ ####
-
-The function is applicable to:
-
-Fence object: returns the total surface area of all fabric rails.
-
-Rail subpart: returns the surface area of the rail if it is fabric. Otherwise, returns N/A.
-
-
-
-#### __SurfaceArea('Panels')__ ####
-
-The function is applicable to:
-
-Fence object: returns the sum of all panel surface areas.
-
-Infill subpart: returns the panel surface area. If the fence has different Infill Type, returns N/A.
-
-
-
-#### __Volume()__ ####
-
-The function is applicable to the Fence object.
-
-Returns the total volume of the fence object.
-
-
-
-#### __Volume('Corner Footers')__ ####
-
-The function is applicable to:
-
-Fence object: returns the total volume of all corner footers.
-
-Footer subpart: returns the volume of the footer. If the footer is not corner, returns N/A.
-
-
-
-#### __Volume('Corner Posts')__ ####
-
-The function is applicable to:
-
-Fence object: returns the volume of all corner posts.
-
-Post subpart: returns the volume of the corner post. If the post is not corner, returns N/A.
-
-
-
-#### __Volume('Footers')__ ####
-
-The function is applicable to:
-
-Fence object: returns the total volume of all footers.
-
-Footer subpart: returns the volume of the footer.
-
-
-
-#### __Volume('Gate Footers')__ ####
-
-The function is applicable to:
-
-Fence object: returns the total volume of all gate footers.
-
-Footer subpart: returns the volume of the footer. If the gate is not gate, returns N/A.
-
-
-
-#### __Volume('Gate Posts')__ ####
-
-The function is applicable to:
-
-Fence object: returns the volume of all gate posts.
-
-Post subpart: returns the volume of the gate post. If the post is not gate, returns N/A.
-
-
-
-#### __Volume('Gates')__ ####
-
-The function is applicable to:
-
-Fence object: returns the total volume of all gates.
-
-Gate subpart: returns the volume of the gate.
-
-
-
-#### __Volume('Gravel Board')__ ####
-
-The function is applicable to:
-
- returns the total volume of all gravel boards.
-
-Gravel Board subpart: returns the volume of the gravel board.
-
-
-
-#### __Volume('Horizontal Boards')__ ####
-
-The function is applicable to:
-
-Fence object: returns the total volume of the horizontal boards.
-
-Infill subpart: returns the horizontal board volume. If the fence has different Infill Type, returns N/A.
-
-
-
-#### __Volume('Panels')__ ####
-
-The function is applicable to:
-
-Fence object: returns the total volume of the panels.
-
-Infill subpart: returns the panel volume. If the fence has different Infill Type, returns N/A.
-
-
-
-#### __Volume('Posts')__ ####
-
-The function is applicable to:
-
-Fence object: returns the volume of all posts.
-
-Post subpart: returns the volume of the post.
-
-
-
-#### __Volume('Rail', <Index>)__ ####
-
-The function is applicable to:
-
-Fence object: returns the total volume of all rails from the selected index.
-
-Rail subpart: returns the volume of the rail. If the rail doesn't correspond to the selected index, returns N/A.
-
-
-
-#### __Volume('Rails')__ ####
-
-The function is applicable to:
-
-Fence object: returns the total volume of all rails.
-
-Rail subpart: returns the volume of the rail. Function is defined only if Depth and Height return nonzero result.
-
-
-
-#### __Volume('Running Footers')__ ####
-
-The function is applicable to:
-
-Fence object: returns the total volume of all running footers.
-
-Footer subpart: returns the volume of the footer. If the footer is not running, returns N/A.
-
-
-
-#### __Volume('Running Posts')__ ####
-
-The function is applicable to:
-
-Fence object: returns the volume of all running posts.
-
-Post subpart: returns the volume of the running post. If the post is not running, returns N/A.
-
-
-
-#### __Volume('Vertical Boards')__ ####
-
-The function is applicable to:
-
-Fence object: returns the total volume of the vertical boards.
-
-Infill subpart: returns the vertical board volume. If the fence has different Infill Type, returns N/A.
-
-
 
 ## Specialized for Hardscape
 
@@ -3644,81 +2487,6 @@ Calculate the volume of the Curb, Landscape Area, Hardscape, or Site Model and t
 
 
 
-## Specialized for Lighting Device
-
-
-#### __Weight(criteria)__ ####
-
-Returns the total weight of the Lighting Device and all it's accessories.
-
-
-
-#### __ObjectData('accessory inst types', <field>)__ ####
-
-Provides access to the Instrument Type of Lighting Device accessories. Use no parameters for all cells and accessories or use parameters to specify cells or accessories.
-
-
-
-#### __ObjectData('accessory parameter', <field>)__ ####
-
-Provides access to a data of the Lighting Device accessory. Use  the first parameter to specify the universal parameter name. Use no parameters additional for all cells and accessories or use additional parameters to specify cells or accessories.
-
-
-
-#### __ObjectData('accessory symbols', <field>)__ ####
-
-Provides access to the symbol names of Lighting Device accessories. Use no parameters for all cells and accessories or use parameters to specify cells or accessories.
-
-
-
-#### __ObjectData('cellsonly', <field>)__ ####
-
-Provides access to a parameter of the Lighting Devices and ignores accessories. Use parameters to specify the universal parameter name.
-
-
-
-#### __ObjectData('channel', <field>)__ ####
-
-Provides access to the channel of Lighting Devices. Use no parameters for all cells and accessories or use parameters to specify cells or accessories.
-
-
-
-#### __ObjectData('colors', <field>)__ ####
-
-Provides access to the color of Lighting Devices. Use no parameters for all cells and accessories or use parameters to specify cells or accessories.
-
-
-
-#### __ObjectData('eval schematic device', '<RecordName>', '<FieldName>')__ ####
-
-Get parameter value or attached record field from the objects's schematic device.
-
-
-
-#### __ObjectData('parameter', <field>)__ ####
-
-Provides access to a parameter of Lighting Devices. Use parameters to specify the universal parameter name, cell number and accessory number.
-
-
-
-## Specialized for Marionette Object
-
-
-#### __ObjectData('parameter', '<OIP FieldName>')__ ####
-
-Get parameter values or attached record fields from Marionette objects.
-
-
-
-## Specialized for Panel Connector
-
-
-#### __ObjectData('eval panel connector circuit', '<RecordName>', '<FieldName>')__ ####
-
-Get parameter value or attached record field from the circuit connected to the panel connector.
-
-
-
 ## Specialized for Plant
 
 
@@ -3747,665 +2515,6 @@ Spreadsheet cell:
 =PlantImage((‘Plant’.’plant ID’=’TaxfR’), 4) displays the image specified for Custom Image in the More Data pane of the plant symbol definition with a plant ID of TaxfR
 
 ```
-
-## Specialized for Railing
-
-
-#### __Width()__ ####
-
-This function is applicable to the following subparts: Frame, Panel, Bracket and Face Post.
-
-QUANTITY DESCRIPTION:
-For Frame: Width of the rectangular frame.
-
-For Panel: Width of the rectangular panel.
-
-For Bracket: width of bracket (actually represents the value of Handrail offset).
-
-For Face Post: width of face post (actually represents the value of Inset).
-
-
-
-#### __Width('brackets')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Width of bracket subpart.
-
-
-
-#### __Width('face posts')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Width of face post subpart.
-
-
-
-#### __Width('frame')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Sum of the width of all frame subparts.
-
-
-
-#### __Width('panels')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Sum of the width of all panel subparts.
-
-
-
-#### __Width('profile')__ ####
-
-This function is applicable to the following subparts: Handrail, Guardrail, Post, Frame, Bar Vertical, Bar Horizontal, Bracket and Face Post.
-
-QUANTITY DESCRIPTION:
-Width of subparts listed above.
-
-
-
-#### __Height()__ ####
-
-This function is applicable to the Railing object and the following subparts: Handrail, Guardrail, Frame, Panel, Bracket, Post and Face Post.
-
-QUANTITY DESCRIPTION:
-For Railing object: Height of the Railing object (actually represents the maximum value of Guardrail Height or Handrail Height).
-
-For Frame: Height of the rectangular frame.
-
-For Panel: Height of the rectangular panel.
-
-For Handrail: Height of Handrail (actually represents the value of Handrail Height).
-
-For Guardrail: Height of Guardrail (actually represents the value of Guardrail Height).
-
-For Face Post: Height of Post.
-
-For Post: Height of Post.
-
-
-
-#### __Height('brackets')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Height of the bracket subpart.
-
-
-
-#### __Height('face posts')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Sum of the height of all face post subparts.
-
-
-
-#### __Height('frame')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Sum of the height of all frame subparts.
-
-
-
-#### __Height('guardrail')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Height of the Guardrail (actually represents the value of Guardrail Height).
-
-
-
-#### __Height('handrail')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Height of the Handrail (actually represents the value of Handrail Height).
-
-
-
-#### __Height('panels')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Sum of the height of all panel subparts.
-
-
-
-#### __Height('posts')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Sum of the height of all post subparts.
-
-
-
-#### __Height('profile')__ ####
-
-This function is applicable to the following subparts: Handrail, Guardrail, Frame, Bar Vertical, Bar Horizontal, Bracket, Post and Face Post.
-
-QUANTITY DESCRIPTION:
-Height of profile of the individual subpart.
-
-
-
-#### __Count('corners')__ ####
-
-This function is applicable to the Railing object and the following subparts: Guardrail and Handrail.
-
-QUANTITY DESCRIPTION:
-For Railing object: Number of vertices that change the direction or height of the path without the beginning and end.
-
-For Guardrail: Number of vertices that change the direction or height of the path without the beginning and end in the Guardrail subpart.
-
-For Handrail: If there is no Guardrail, then number of vertices that change the direction or height of the path without the beginning and end in the Guardrail subpart.
-
-
-
-#### __Angle()__ ####
-
-This function is applicable to the following subparts: Bar Vertical and Bar Horizontal.
-
-QUANTITY DESCRIPTION:
-For Bar Vertical: Angle of the vertical bars(if option Rotate bars to diagonals on then 45° if not 0°.).
-
-For Bar Horizontal: Angle of the horizontal bars(if option Rotate bars to diagonals on then 45° if not 0°.).
-
-
-
-#### __Angle('bar horizontal')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-For Railing object: Angle of the horizontal bars(if option Rotate bars to diagonals on then 45° if not 0°.).
-
-
-
-#### __Angle('bar vertical')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-For Railing object: Angle of the vertical bars(if option Rotate bars to diagonals on then 45° if not 0°.).
-
-
-
-#### __Area()__ ####
-
-This function is applicable to the Railing object and the following subparts: Frame, Panel, Bracket and Face Post.
-
-QUANTITY DESCRIPTION:
-For Railing object: Area of the entire Railing object.
-
-For subpart: Area of the individual subpart.
-
-
-
-#### __Area('brackets')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Area of bracket subpart.
-
-
-
-#### __Area('face posts')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Area of face post subpart.
-
-
-
-#### __Area('frame')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Sum of the area of all frame subparts.
-
-
-
-#### __Area('panels')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Sum of the area of all panel subparts.
-
-
-
-#### __Perimeter()__ ####
-
-This function is applicable to the Frame subpart.
-
-QUANTITY DESCRIPTION:
-Frame: Perimeter of the Frame.
-
-
-
-#### __Perimeter('frame')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-For Railing object: Perimeter of all Frames.
-
-
-
-#### __Length()__ ####
-
-This function is applicable to the Railing object and the following subparts: Handrail, Guardrail, Frame, Bar Vertical, Bar Horizontal, Bracket and Face Post.
-
-QUANTITY DESCRIPTION:
-For Railing object: Length of the 3D object path.
-
-For Handrail: Length of the 3D handrail.
-
-For Guardrail: Length of the 3D guardrail.
-
-For Frame: With of frame.
-
-For Bar Vertical: Length of the bar vertical.
-
-For Bar Horizontal: Length of the bar horizontal.
-
-For Bracket: Handrail Offset + Bracket Height.
-
-For Face Post: Width + height of face post.
-
-
-
-#### __Length('bar horizontal')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Sum of the length of all bar horizontal subparts.
-
-
-
-#### __Length('bar vertical')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Sum of the length of all bar vertical subparts.
-
-
-
-#### __Length('brackets')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Length of the bracket subpart.
-
-
-
-#### __Length('face posts')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Length of the face post subpart.
-
-
-
-#### __Length('frame')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Length of the frame subpart.
-
-
-
-#### __Length('guardrail')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Sum of the length of all guardrail subparts.
-
-
-
-#### __Length('handrail')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Sum of the length of all handrail subparts.
-
-
-
-#### __Length('max support spacing')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Maximum distance between posts if there no posts then returns the maximum distance between brackets.
-
-
-
-#### __SurfaceArea()__ ####
-
-This function is applicable to the following subparts: Handrail, Guardrail, Post, Frame, Panel, Bar Vertical, Bar Horizontal, Bracket and Face Post.
-
-QUANTITY DESCRIPTION:
-Complete outer surface area of subpart.
-
-
-
-#### __SurfaceArea('bar horizontal')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Sum of the surface area of all bar horizontal subparts.
-
-
-
-#### __SurfaceArea('bar vertical')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Sum of the surface area of all bar vertical subparts.
-
-
-
-#### __SurfaceArea('brackets')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Surface area of bracket.
-
-
-
-#### __SurfaceArea('face posts')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Sum of the surface area of all face post subparts.
-
-
-
-#### __SurfaceArea('frame')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Sum of the surface area of all frame subparts.
-
-
-
-#### __SurfaceArea('guardrail')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Sum of the surface area of all guardrail subparts.
-
-
-
-#### __SurfaceArea('handrail')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Sum of the surface area of all handrail subparts.
-
-
-
-#### __SurfaceArea('panels')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Sum of the surface area of all panel subparts.
-
-
-
-#### __SurfaceArea('posts')__ ####
-
-This function is applicable to the Railing object.
-
-QUANTITY DESCRIPTION:
-Sum of the surface area of all post subparts.
-
-
-
-## Specialized for Railing/Fence
-
-
-#### __Width()__ ####
-
-Width([optional parameter])
-
-This function is applicable to the following subparts: Wall Bracket, Face Mount, Frame and Panel.
-
-OPTIONAL PARAMETER:
-'subpart=...': If provided, only the given subpart is included.
-
-QUANTITY DESCRIPTION:
-For Wall Bracket: Horizontal dimension of the Top Rails Wall Bracket.
-
-For Face Mount: Horizontal dimension of the Face Mount Post.
-
-For Frame: Width of the rectangular frame.
-
-For Panel: Width of the panel in elevation.
-
-
-
-#### __Width('profile')__ ####
-
-Width('profile', [optional parameter])
-
-This function is applicable to the following subparts: Top Rail, Post, Crossbar Top and Bottom, Bar Vertical and Horizontal, Frame.
-
-OPTIONAL PARAMETER:
-'subpart=...': If provided, only the given subpart is included.
-
-QUANTITY DESCRIPTION:
-For Top Rail: Width of the Railings TopRail cross section profile. For round or octagonal shape of profile, width equals height. For custom profile (symbol), the bounding box is used to calculate this value.
-
-For Post: Width of the Posts cross section profile.
-
-For Crossbar Top and Crossbar Bottom: Width of the profile of the crossbar.
-
-For Bar Vertical and Bar Horizontal: Width of the vertical bars profile.
-
-
-
-#### __Height()__ ####
-
-Height([optional parameter])
-
-This function is applicable to the Railing object and the following subparts: Top Rail, Wall Bracket, Post, Face Mount, Frame, Panel.
-
-OPTIONAL PARAMETER:
-'subpart=...': If provided, only the given subpart is included.
-
-QUANTITY DESCRIPTION:
-For Railing object: The height of the railing, measured as the vertical distance between the top of the floor or stair (which is Height Point 1 in the object info palette) and the top of the highest subpart of the Railing (Top Rail if available, Frame, Panel or Crossbar Top).
-This value is written into the IFC-field Pset_RailingCommon.Height.
-
-For Top Rail: Height of the TopRail, measured as the distance between the top of the floor or stair (which is Height Point 1 in the object info palette) and the top of the Railings Top Rail.
-
-For Wall Bracket: Vertical dimension of the Top Rails Wall Bracket.
-
-For Post: Height of the Post.
-
-For Face Mount: Vertical dimension of the Face Mount Post.
-
-For Frame: Height of the rectangular frame.
-
-For Panel: Height of the panel in elevation.
-
-
-
-#### __Height('profile')__ ####
-
-Height('profile', [optional parameter])
-
-This function is applicable to the following subparts: Top Rail, Post, Crossbar Top and Bottom, Bar Vertical and Horizontal, Frame.
-
-OPTIONAL PARAMETER:
-'subpart=...': If provided, only the given subpart is included.
-
-QUANTITY DESCRIPTION:
-For Top Rail: Height of the Railings TopRail cross section profile. For round or octagonal shape of profile, width equals height. For custom profile (symbol), the bounding box is used to calculate this value.
-
-For Post: Height of the Posts cross section profile.
-
-For Crossbar Top and Crossbar Bottom: Height of the profile of the crossbar.
-
-For Bar Vertical and Bar Horizontal: Height of the vertical bars profile.
-
-
-
-#### __Count('angle')__ ####
-
-Count('angle', [optional parameter])
-
-This function is applicable to the Railing object and the Top Rail.
-
-OPTIONAL PARAMETER:
-'subpart=...': If provided, only the given subpart is included.
-
-QUANTITY DESCRIPTION:
-For Railing: Number of vertices that change the path without the beginning and end. Or IOW: the number of angles in the path..
-
-For Top Rail: Number of angles  in the Top Rail subpart.
-
-
-
-#### __Angle()__ ####
-
-Angle([optional parameter])
-
-This function is applicable to the following subparts: Bar Vertical and Bar Horizontal.
-
-OPTIONAL PARAMETER:
-'subpart=...': If provided, only the given subpart is included.
-
-QUANTITY DESCRIPTION:
-For Bar Vertical: Angle of the vertical bars. Vertical is 0°.
-
-For Bar Horizontal: Angle of the horizontal bar. horizontal is 0°.
-
-
-
-#### __Area()__ ####
-
-Area([optional parameter])
-
-This function is applicable to the Railing object and the Panel subpart.
-
-OPTIONAL PARAMETER:
-'subpart=...': If provided, only the given subpart is included.
-
-QUANTITY DESCRIPTION:
-For Railing: Area of the Railing object measured by Railing Length multiplied by Railing Height. Length is the distance between the outer edges of the first and last post or between the infills, whichever results in the higher value. Extended handrails are excluded. This Length differs from buildingSMART standard which is stored in the Railing objects record field RailingLengthIFC. The height of the railing is measured as the vertical distance between the top of the floor or stair (which is Height Point 1 in the object info palette) and the top of the highest subpart of the Railing (Top Rail if available, Frame, Panel or Crossbar Top).
-
-For Panel: Area of the panel (Width x Height).
-
-
-
-#### __Perimeter()__ ####
-
-
-
-
-
-#### __Length('')__ ####
-
-Length([optional parameter])
-
-This function is applicable to the Railing object and the following subparts: Top Rail, Crossbar Top, Crossbar Bottom, Bar Vertical, Bar Horizontal, Frame.
-
-OPTIONAL PARAMETER:
-'subpart=...': If provided, only the given subpart is included.
-
-QUANTITY DESCRIPTION:
-For Railing object: It is the distance between the outer edges of the first and last post or between the infills, whichever results in the higher value. Extended handrails are excluded. This Length differs from buildingSMART standard which is stored in the Railing objects record field RailingLengthIFC and written into Qto_RailingBaseQuantities.Length and BaseQuantities.Length.
-
-For Top Rail: Length of the 3D path object of the top rail including extensions of the Top Rail at beginning or end of the Railing object.
-
-For Crossbar Top and Bottom: Length of the crossbar.
-
-For Bar Vertical and Horizontal: Length of the bar.
-
-For Frame: It is the same value as for Width when applied to a Frame.
-
-
-
-#### __Length('max')__ ####
-
-Maximum occuring distance between the axes of all instances of a subparts.
-Eligible subparts are Wall Bracket, Post and Face Mount.
-
-OPTIONAL PARAMETER:
-'subpart=...': If provided, only the given subpart is included.
-
-QUANTITY DESCRIPTION:
-For Wall Bracket: Returns the maximum distance between the axes of all Wall Brackets occuring anywhere in the Railing object.
-
-For Post: Maximum occuring distance between the axes of all posts.
-
-For Face Mount: Maximum Distance between the axes of all Face Mounts. 
-
-
-
-#### __SurfaceArea()__ ####
-
-SurfaceArea([optional parameter])
-
-This function is applicable to the following subparts: Top Rail, Wall Bracket, Post, Face Mount, Crossbar Top and Bottom, Bar Vertical and Horizontal, Frame, Panel.
-
-OPTIONAL PARAMETER:
-'subpart=...': If provided, only the given subpart is included.
-
-QUANTITY DESCRIPTION:
-For Top Rail: Outer surface of the top rail on all sides including the two caps at beginning and end.
-
-For Wall Bracket: Complete outer surface of the Top Rails Wall Bracket.
-
-For Post: Complete Outer Surface of the Post including the sides which face the stair or wall or handrail.
-
-For Face Mount: Complete Outer Surface of the Face Mount Post including the caps surfaces which are mounted against a wall, post, stair or other object.
-
-For Crossbar Top and Bottom: Complete Surface of all sides of the crossbar.
-
-Bar Vertical and Horizontal: Complete Surface of all sides of the bar.
-
-For Frame: Complete Surface of the rectangular frame.
-
-For Panel: Complete surface area of all sides of the panel.
-
-
 
 ## Specialized for Roof
 
@@ -4836,12 +2945,6 @@ opening criteria: If provided, only openings that satisfy all given criteria wil
 The difference between Count('inserts') and Count('openings') is that in the rare cases where two inserts share the same opening, Count('inserts') will treat them as different inserts, but Count('openings') will treat them as one large opening.
 ```
 
-#### __Angle('energos')__ ####
-
-Get the orientation from the north used in the Energos calculations for this object.
-
-
-
 #### __SlabThickness()__ ####
 
 Returns the thickness of slab objects.
@@ -5139,52 +3242,8 @@ Returns the volume of the openings in a wall, wall component, slab or slab compo
 =Volume('openings', 'component=core', 'min opening volume=10 cu cm') returns the total volume of openings with a volume of at least 10 cubic centimeters in the wall core component.
 ```
 
-## Specialized for Socket
-
-
-#### __ObjectData('eval socket circuits', '<RecordName>', '<FieldName>')__ ####
-
-Get parameter values or attached record fields from the socket's connected circuits.
-
-
-
-#### __ObjectData('eval socket device', '<RecordName>', '<FieldName>')__ ####
-
-Get parameter value or attached record field from the socket's device.
-
-
-
 ## Specialized for Space
 
-
-#### __ObjectData('finish', field_name, [delimiter], [location], [wall_index])__ ####
-
-Returns the value of the field named 'field_name' in a Space_Finish record.
-
-The function is applicable to the Space object and any of its subobjects that have a Space_FinishSurface or Space_Finish record attached to them. In the latter case, the function will just return the value of the record field. In the former two cases, the function will list the Space_Finish record field values for all subobjects that fit the given 'location' and 'wall index' criteria, separated by the given 'delimiter'.
-
-'delimiter': Could be any string. Will be added between each of the returned values. Use '\n' to have each value on a separate line. By default, the values will be comma-separated.
-
-'location': Could be 'floor', 'base', 'walls', 'ceiling', 'north', 'east', 'south' or 'west'. If this parameter is provided, only finishes with the given location will be listed.
-
-'wall_index': The index of a wall, whose value should be listed. Only applicable if 'walls' is used for the 'location' parameter. If not provided, all wall values will be listed.
-
-
-```python
-In a database header, for each Space object.
-=ObjectData('finish', 'FinishKey', ', ') - Lists the finish key of all finishes used in a space, separated by a comma.
-=ObjectData('finish', 'FinishKey', '\n') - Lists the finish key of all finishes used in a space, each on a new line.
-=ObjectData('finish', 'FinishKey', ', ', 'floor') - Lists the finish key of all finishes used for the floors in a space.
-=ObjectData('finish', 'FinishKey', ', ', 'walls') - Lists the finish key of all finishes used for the walls in a space.
-=ObjectData('finish', 'FinishKey', ', ', 'walls', 1) - Lists the finish key of all finishes used for the first wall in a space.
-=ObjectData('finish', 'FinishKey', ', ', 'walls', 2) - Lists the finish key of all finishes used for the second wall in a space.
-
-In a database header, for each Space subpart, where Space_Finish is present.
-=ObjectData('finish', 'FinishKey') - Equivalent to ='Space_Finish'.'FinishKey'
-=ObjectData('finish', 'FinishKey', '', 'ceiling') - Returns the key of the finish, only if the finish is applied to the ceiling.
-=ObjectData('finish', 'FinishKey', '', 'walls', 1) - Returns the key of the finish, only if the finish is applied to the first wall.
-
-```
 
 #### __GetSpaceNameForObj()__ ####
 
@@ -5211,93 +3270,6 @@ Database header cell:
 
 Spreadsheet cell:
 =GetSpaceNumForObj(n='chair-1') returns the space number for the object named “chair-1”
-```
-
-## Specialized for Structural Member
-
-
-#### __ObjectData(criteria, 'cover bound bottom')__ ####
-
-Returns the bottom bound of the structural member cover.
-
-
-```python
-Database header cell:
-=OBJECTDATA('cover bound bottom')     Returns the bottom bound of the Structural Member cover.
-
-Spreadsheet cell:
-=OBJECTDATA(SEL, 'cover bound bottom')    Returns the bottom bound of the Structural Member cover.
-
-```
-
-#### __ObjectData(criteria, 'cover bound top')__ ####
-
-Returns the top bound of the Structural Member cover.
-
-
-```python
-Database header cell:
-=OBJECTDATA('cover bound top')     Returns the top bound of the Structural Member cover.
-
-Spreadsheet cell:
-=OBJECTDATA(SEL, 'cover bound top')    Returns the top bound of the Structural Member cover.
-
-```
-
-#### __ObjectData(criteria, 'cover physical length')__ ####
-
-Returns the physical length of the structural member cover including its start and end conditions.
-
-
-```python
-Database header cell:
-=OBJECTDATA('cover physical length')     Returns the physical length of the structural member cover including its start and end conditions.
-
-Spreadsheet cell:
-=OBJECTDATA(SEL, 'cover physical length')    Returns the physical length of the structural member cover including its start and end conditions.
-
-```
-
-#### __ObjectData(criteria, 'member bound bottom')__ ####
-
-Returns the bottom bound of the Structural Member.
-
-
-```python
-Database header cell:
-=OBJECTDATA('member bound bottom')     Returns the bottom bound of the Structural Member.
-
-Spreadsheet cell:
-=OBJECTDATA(SEL, 'member bound bottom')    Returns the bottom bound of the Structural Member.
-
-```
-
-#### __ObjectData(criteria, 'member bound top')__ ####
-
-Returns the top bound of the Structural Member.
-
-
-```python
-Database header cell:
-=OBJECTDATA('member bound top')     Returns the top bound of the Structural Member.
-
-Spreadsheet cell:
-=OBJECTDATA(SEL, 'member bound top')    Returns the top bound of the Structural Member.
-
-```
-
-#### __ObjectData(criteria, 'member physical length')__ ####
-
-Returns the physical length of the structural member including its start and end conditions.
-
-
-```python
-Database header cell:
-=OBJECTDATA('member physical length')     Returns the physical length of the structural member including its start and end conditions.
-
-Spreadsheet cell:
-=OBJECTDATA(SEL, 'member physical length')    Returns the physical length of the structural member including its start and end conditions.
-
 ```
 
 ## Specialized for Wall
@@ -5340,6 +3312,13 @@ Returns the footprint area of a wall or wall component. All openings are ignored
 'height=...': Specifies the height relative to the layer plane at which the area is measured. A height of 0 is used by default. If the value doesn't have any units specified, millimeters will be assumed.
 
 
+```python
+=FootprintArea('gross') returns the gross area of the footprint of the wall or wall component.
+
+=FootprintArea('gross', 'component=core') returns the gross area of the footprint of the core component of the wall.
+
+=FootprintArea('gross', 'height=100mm') returns the gross area of the footprint of the wall or wall component, but measured at 100mm from the layer.
+```
 
 #### __FootPrintArea('net', [optional parameters])__ ####
 
@@ -5360,6 +3339,23 @@ Returns the footprint area of a wall or wall component.
 'height=...': Specifies the height relative to the layer plane at which the area is measured. A height of 0 is used by default. If the value doesn't have any units specified, millimeters will be assumed.
 
 
+```python
+=FootprintArea('net') returns the area of the footprint of the wall or wall component.
+
+=FootprintArea('net', 'min opening area=0.5 sq m') returns the area of the footprint of the wall or wall component, but ignoring any openings under 0.5 square meters.
+
+=FootprintArea('net', 'min opening area=0.5 sq m', 'max opening area=1 sq m') returns the area of the footprint of the wall or wall component, but ignoring any openings under 0.5 square meters or over 1 square meter.
+
+=FootprintArea('net', 'opening type=Door') returns the area of the footprint of the wall or wall component, but only taking openings created by "Door" plug-in objects into account.
+
+=FootprintArea('net', 'exclude opening type=Door') returns the area of the footprint of the wall or wall component, but ignoring any openings that are created by "Door" plug-in objects.
+
+=FootprintArea('net', 'opening type=Door;WinDoor 6.0') returns the area of the footprint of the wall or wall component, but only taking openings created by "Door" or "WinDoor 6.0" plug-in objects into account.
+
+=FootprintArea('net', 'component=core') returns the area of the footprint of the core component of the wall.
+
+=FootprintArea('net', 'height=100mm') returns the area of the footprint of the wall or wall component, but measured at 100mm from the layer.
+```
 
 #### __FootPrintArea('openings', [optional parameters])__ ####
 
@@ -5380,6 +3376,23 @@ Returns the area of the openings in the footprint of a wall or wall component.
 'height=...': Specifies the height relative to the layer plane at which the area is measured. A height of 0 is used by default. If the value doesn't have any units specified, millimeters will be assumed.
 
 
+```python
+=FootprintArea('openings') returns the total area of openings on the footprint of the wall or wall component.
+
+=FootprintArea('openings', 'min opening area=0.5 sq m') returns the total area of openings on the footprint of the wall or wall component, but ignoring any openings under 0.5 square meters.
+
+=FootprintArea('openings', 'min opening area=0.5 sq m', 'max opening area=1 sq m') returns the total area of openings on the footprint of the wall or wall component, but ignoring any openings under 0.5 square meters or over 1 square meter.
+
+=FootprintArea('openings', 'opening type=Door') returns the total area of openings on the footprint of the wall or wall component, but only taking openings created by "Door" plug-in objects into account.
+
+=FootprintArea('openings', 'exclude opening type=Door') returns the total area of openings on the footprint of the wall or wall component, but ignoring any openings that are created by "Door" plug-in objects.
+
+=FootprintArea('openings', 'opening type=Door;WinDoor 6.0') returns the total area of openings on the footprint of the wall or wall component, but only taking openings created by "Door" or "WinDoor 6.0" plug-in objects into account.
+
+=FootprintArea('openings', 'component=core') returns the total area of openings on the footprint of the core component of the wall.
+
+=FootprintArea('openings', 'height=100mm') returns the total area of openings on the footprint of the wall or wall component, but measured at 100mm from the layer.
+```
 
 #### __ObjectData('Acoustic Rating')__ ####
 
@@ -5572,12 +3585,6 @@ opening criteria: If provided, only openings that satisfy all given criteria wil
 
 The difference between Count('inserts') and Count('openings') is that in the rare cases where two inserts share the same opening, Count('inserts') will treat them as different inserts, but Count('openings') will treat them as one large opening.
 ```
-
-#### __Angle('energos')__ ####
-
-Get the orientation from the north used in the Energos calculations for this object.
-
-
 
 #### __WallArea_Net()__ ####
 
@@ -6458,103 +4465,6 @@ Spreadsheet cell:
 =WallOverallHeight((t=wall)&(sel=true)) returns the average overall height of all walls that are selected in the drawing
 
 ```
-
-## Specialized for WinDoor 6.0
-
-
-#### __Angle('energos')__ ####
-
-Get the orientation from the north used in the Energos calculations for this object.
-
-
-
-## Specialized for Window
-
-
-#### __Angle('energos')__ ####
-
-Get the orientation from the north used in the Energos calculations for this object.
-
-
-
-#### __Volume(criteria, 'glazing all')__ ####
-
-Returns the total volume of all glazing.
-
-
-```python
-Database header cell:
-=VOLUME('glazing all')     Returns the total volume of all glazing.
-
-Spreadsheet cell:
-=VOLUME(SEL, 'glazing all')    Returns the total volume of all glazing.
-
-```
-
-#### __Volume(criteria, 'glazing for sashes')__ ####
-
-Returns the volume of glazing for all sashes except the transom.
-
-
-```python
-Database header cell:
-=VOLUME('glazing for sashes')     Returns the volume of glazing for all sashes except the transom.
-
-Spreadsheet cell:
-=VOLUME(SEL, 'glazing for sashes')    Returns the volume of glazing for all sashes except the transom.
-
-```
-
-#### __Volume(criteria, 'glazing for transom')__ ####
-
-Returns the volume of glazing for the transom.
-
-
-```python
-Database header cell:
-=VOLUME('glazing for transom')     Returns the volume of glazing for the transom.
-
-Spreadsheet cell:
-=VOLUME(SEL, 'glazing for transom')    Returns the volume of glazing for the transom.
-
-```
-
-#### __Volume(criteria, 'window jamb')__ ####
-
-Returns the volume of all geometry that makes up the Jamb and Mullions.
-
-
-```python
-Database header cell:
-=VOLUME('window jamb')     Returns the volume of all geometry that makes up the Jamb and Mullions.
-
-Spreadsheet cell:
-=VOLUME(SEL, 'window jamb')   Returns the volume of all geometry that makes up the Jamb and Mullions.
-
-```
-
-#### __Volume(criteria, 'window sashes')__ ####
-
-Returns the total volume the all sashes (including the transom sash).
-
-
-```python
-Database header cell:
-=VOLUME('window sashes')     Returns the total volume the all sashes (including the transom sash).
-
-Spreadsheet cell:
-,VOLUME(SEL, 'window sashes')    Returns the total volume the all sashes (including the transom sash).
-
-```
-
-## Specialized for Window CW
-
-
-#### __Angle('energos')__ ####
-
-Get the orientation from the north used in the Energos calculations for this object.
-
-
 
 ## Text
 
