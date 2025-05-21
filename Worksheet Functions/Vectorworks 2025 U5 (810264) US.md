@@ -7,6 +7,7 @@ In European notation, the decimal "." should be "," and the separator "," should
  **❗❗❗ Note:** <span style='color:red'>This page is automatically generated.</span> If you see changes that need to be done, please contact [devsupport@vectorworks.net](mailto:devsupport@vectorworks.net).
 
 
+
 ## Contents
 - [General](#general)
 - [Logic](#logic)
@@ -55,7 +56,7 @@ ___
 ## General
 
 
-#### __RunScript(scriptPath \[, functionName\])__ ####
+#### __RunScript(scriptPath [, functionName])__ ####
 
 Executes a script and returns the result value.
 
@@ -80,7 +81,7 @@ Returns the default value of a given field name of the specified record format.
 
 ```
 
-#### __RunScriptEdit(scriptPath \[, functionName\])__ ####
+#### __RunScriptEdit(scriptPath [, functionName])__ ####
 
 Executes a script and returns the result value. The cells are editable and the same script is executed to handle the edit.
 
@@ -96,7 +97,7 @@ Creates a database of objects that meet the criteria.
 
 ```
 
-#### __DatabaseByScript(\[scriptPath\], scriptName, ...params...)__ ####
+#### __DatabaseByScript([scriptPath], scriptName, ...params...)__ ####
 
 Runs a script to create a database of objects.
 
@@ -205,13 +206,13 @@ Use value_if_true if logical_test is true, value_is_false if logical_test is fal
 ## Lookup
 
 
-#### __VLookup(value, \[use_pattern\], result_col_index, not_found_value, table)__ ####
+#### __VLookup(value, [use_pattern], result_col_index, not_found_value, table)__ ####
 
 Finds a value in the table range, looking at the leftmost column, and returns the value at the result_col_index in that same row. Uses ECMAScript syntax for the pattern: https://www.cplusplus.com/reference/regex/ECMAScript/?kw=ECMAScript
 
 
 ```python
-=VLookup(value, \[use_pattern\], result_col_index, not_found_value, table)
+=VLookup(value, [use_pattern], result_col_index, not_found_value, table)
 
 Find a value in the table range, looking at the first column, and return the value at the resut_col_index of that row.
 
@@ -236,19 +237,19 @@ Note the second example, the table is a range for another worksheet named 'Works
 2 |        |  tech     | tech@vectorworks.net
 3 |  tech  |  PR       | PR@vectorworks.net
 
-When \[use_pattern\] is missing or "false", the "value" will be matched exactly when looking up.
-When \[use_pattern\] is "true" then the "value" is expected to be a regular expression that will be used when looking up.
+When [use_pattern] is missing or "false", the "value" will be matched exactly when looking up.
+When [use_pattern] is "true" then the "value" is expected to be a regular expression that will be used when looking up.
 Here is more information of the syntax of the regular rexpressions: https://cplusplus.com/reference/regex/ECMAScript/?kw=ECMAScript
 And here is a web-tool that can help developing and testing regular expressions: https://regexr.com/
 ```
 
-#### __XLookup(value, \[use_pattern\], not_found_value, array_lookup, array_result)__ ####
+#### __XLookup(value, [use_pattern], not_found_value, array_lookup, array_result)__ ####
 
 Finds a value in the array_lookup, and returns the value from the array_result at the found row. The arrays should be ranges on the same column. Uses ECMAScript syntax for the pattern: https://www.cplusplus.com/reference/regex/ECMAScript/?kw=ECMAScript
 
 
 ```python
-=XLookup(value, \[use_pattern\], not_found_value, array_lookup, array_result)
+=XLookup(value, [use_pattern], not_found_value, array_lookup, array_result)
 
 Find a value in the array_lookup, and return the value from the array_result at the found row. the arrays should be ranges on the same column.
 
@@ -277,8 +278,8 @@ Named worksheet: 'Worksheet-Result':
 2 |  1235  | tech@vectorworks.net
 3 |  1236  | PR@vectorworks.net
 
-When \[use_pattern\] is missing or "false", the "value" will be matched exactly when looking up.
-When \[use_pattern\] is "true" then the "value" is expected to be a regular expression that will be used when looking up.
+When [use_pattern] is missing or "false", the "value" will be matched exactly when looking up.
+When [use_pattern] is "true" then the "value" is expected to be a regular expression that will be used when looking up.
 Here is more information of the syntax of the regular rexpressions: https://cplusplus.com/reference/regex/ECMAScript/?kw=ECMAScript
 And here is a web-tool that can help developing and testing regular expressions: https://regexr.com/
 ```
@@ -514,7 +515,7 @@ A number between bottom and top, including bottom but not including top.
 
 
 ```python
-=randBetween(10, 100) returns a random number in the range \[10, 100\]
+=randBetween(10, 100) returns a random number in the range [10, 100]
 
 ```
 
@@ -524,11 +525,11 @@ A number between 0 and 1, including 0 but not including 1.
 
 
 ```python
-=rand() returns a random number in the range \[0, 1)
+=rand() returns a random number in the range [0, 1)
 
 ```
 
-#### __ceiling(number, \[significance\])__ ####
+#### __ceiling(number, [significance])__ ####
 
 Rounds a number rounded up, away from zero, to the nearest multiple of significance.
 
@@ -538,7 +539,7 @@ Rounds a number rounded up, away from zero, to the nearest multiple of significa
 
 ```
 
-#### __floorNum(number, \[significance\])__ ####
+#### __floorNum(number, [significance])__ ####
 
 Rounds a number down, toward zero, to the nearest multiple of significance.
 
@@ -548,7 +549,7 @@ Rounds a number down, toward zero, to the nearest multiple of significance.
 
 ```
 
-#### __truncate(number, \[num digits\])__ ####
+#### __truncate(number, [num digits])__ ####
 
 A number truncated to the specified number of decimal places.
 
@@ -633,37 +634,37 @@ Returns the sum of all numbers in the list of arguments.
 ### General
 
 
-#### __Depth(\[optional parameters\])__ ####
+#### __Depth([optional parameters])__ ####
 
 Returns the object's depth. The optional parameters will return specific values for certain objects, and the available options will be listed separately.
 
 
 
-#### __Weight(\[optional parameters\])__ ####
+#### __Weight([optional parameters])__ ####
 
 Returns the object's wight. The optional parameters will return specific values for certain objects, and the available options will be listed separately.
 
 
 
-#### __ProjectedArea(\[optional parameters\])__ ####
+#### __ProjectedArea([optional parameters])__ ####
 
 Returns the object's projected area. The optional parameters will return specific values for certain objects, and the available options will be listed separately.
 
 
 
-#### __FootPrintArea(\[optional parameters\])__ ####
+#### __FootPrintArea([optional parameters])__ ####
 
 Returns the object's footprint area. The optional parameters will return specific values for certain objects, and the available options will be listed separately.
 
 
 
-#### __CrossSectionArea(\[optional parameters\])__ ####
+#### __CrossSectionArea([optional parameters])__ ####
 
 Returns the object's cross section area. The optional parameters will return specific values for certain objects, and the available options will be listed separately.
 
 
 
-#### __SpecialArea(\[optional parameters\])__ ####
+#### __SpecialArea([optional parameters])__ ####
 
 Returns the object's special area typically defined by parameters. The optional parameters will return specific values for certain objects, and the available options will be listed separately.
 
@@ -698,7 +699,7 @@ Available options for param_index:
 
 
 
-#### __ObjectData('component', <value> \[, <component index>\])__ ####
+#### __ObjectData('component', <value> [, <component index>])__ ####
 
 When called on an object, the function returns the specified <value> of the object's component with the specified <component index>, or the core component if <component index> is missing. When called on a component, the function will return the specified <value> for that component. If the optional <component index> is added, the function will return the component value only for components that match the given index.
 
@@ -809,7 +810,7 @@ Returns the layer description of the object's layer.
 
 
 
-#### __ObjectData('load info', paramSelector, \[loadIndex\])__ ####
+#### __ObjectData('load info', paramSelector, [loadIndex])__ ####
 
 Get load info from a load object. ParamSelector can be - 'Position', 'Load ID', 'Load Name', 'Distributed Weight' and 'Total Weight'. If no loadIndex is specified the first load is used.
 
@@ -821,7 +822,7 @@ Returns the specified object variable from the object.
 
 
 
-#### __ObjectData('Universal Value', format_name, field_name, \[is format\])__ ####
+#### __ObjectData('Universal Value', format_name, field_name, [is format])__ ####
 
 Returns the universal value of the specified field of record or format if the optional parameter is True. It will work with the parametric format when the format_name is empty. Returns N/A if the object doesn't have the record attached or the format doesn't exist.
 
@@ -855,7 +856,7 @@ Spreadsheet cell:
 
 ```
 
-#### __Width(\[optional parameters\])__ ####
+#### __Width([optional parameters])__ ####
 
 Returns the delta X (width) of objects. The optional parameters will return specific values for certain objects, and the available options will be listed separately.
 
@@ -869,7 +870,7 @@ Spreadsheet cell:
 
 ```
 
-#### __Height(\[optional parameters\])__ ####
+#### __Height([optional parameters])__ ####
 
 Returns the delta Y (height) of objects. The optional parameters will return specific values for certain objects, and the available options will be listed separately.
 
@@ -883,7 +884,7 @@ Spreadsheet cell:
 
 ```
 
-#### __Count(\[optional parameters\])__ ####
+#### __Count([optional parameters])__ ####
 
 Returns the number of objects. The optional parameters will return specific values for certain objects, and the available options will be listed separately.
 
@@ -899,7 +900,7 @@ When used with the COUNT function, the SEL (selection status) criterion counts o
 
 ```
 
-#### __Count('subparts', \[subpart_name\])__ ####
+#### __Count('subparts', [subpart_name])__ ####
 
 Returns the number of subparts in a plug-in object. If subpart_name is provided, then only subparts with the given subpart name will be counted. If the given subpart name doesn't match the localized name of a subpart, then it will be treated as a universal name.
 
@@ -1036,7 +1037,7 @@ Spreadsheet cell:
 
 ```
 
-#### __Perim(\[optional parameters\])__ ####
+#### __Perim([optional parameters])__ ####
 
 Returns the object's perimeter. The optional parameters will return specific values for certain objects, and the available options will be listed separately.
 
@@ -1049,7 +1050,7 @@ Spreadsheet cell:
 =Perim(sel=true) returns the total perimeter of all selected objects
 ```
 
-#### __Length(\[optional parameters\])__ ####
+#### __Length([optional parameters])__ ####
 
 Returns the length of lines or walls. The optional parameters will return specific values for certain objects, and the available options will be listed separately.
 
@@ -1105,7 +1106,7 @@ Spreadsheet cell:
 
 ```
 
-#### __SurfaceArea(\[optional parameters\])__ ####
+#### __SurfaceArea([optional parameters])__ ####
 
 Returns the object's surface area. The optional parameters will return specific values for certain objects, and the available options will be listed separately.
 
@@ -1119,7 +1120,7 @@ Spreadsheet cell:
 
 ```
 
-#### __Volume(\[optional parameters\])__ ####
+#### __Volume([optional parameters])__ ####
 
 Returns the object's volume of objects. The optional parameters will return specific values for certain objects, and the available options will be listed separately.
 
@@ -2244,19 +2245,19 @@ Get parameter value or attached record field from the adapter's plug socket.
 ## Specialized for Cable
 
 
-#### __ObjectData('cable break', '<DataSelector>', \[<Break Index>)\]__ ####
+#### __ObjectData('cable break', '<DataSelector>', [<Break Index>)]__ ####
 
 Get cable break data. Data selectors - 'Name'. If the function is called on a cable break subpart there is no need to specify the break index. If the function is called on a cable object you have to specify the break index.
 
 
 
-#### __ObjectData('cable section', '<DataSelector>', \[<Section Index>)\], \[<Part Index>)\]__ ####
+#### __ObjectData('cable section', '<DataSelector>', [<Section Index>)], [<Part Index>)]__ ####
 
 Get cable section data. Data selectors - 'Name', 'Parts Ordered'. 'Parts Ordered' is read only. If the function is called on a cable section subpart there is no need to specify the section index. If the function is called on a cable object you have to specify the section index. Optionally, for 'Parts Ordered' you can specify part index which to display.
 
 
 
-#### __Length('cable section', '<DataSelector>', \[<Section Index>)\]__ ####
+#### __Length('cable section', '<DataSelector>', [<Section Index>)]__ ####
 
 Get cable section length. Data selectors - 'Length', 'Start Slack', 'End Slack', 'Swag', 'Total Vertical Drop'. 'Length' and 'Total Vertical Drop' are read only. If the function is called on a cable section subpart there is no need to specify the section index. If the function is called on a cable object you have to specify the section index.
 
@@ -2283,13 +2284,13 @@ Get parameter value or attached record field from the circuit's destination sock
 
 
 
-#### __ObjectData('eval circuit drop points', \['<RecordName>'\], \['<FieldName>'\], \['ignoreEnds'\])__ ####
+#### __ObjectData('eval circuit drop points', ['<RecordName>'], ['<FieldName>'], ['ignoreEnds'])__ ####
 
 List any intermediate drop point ID’s, parameter values or attached record fields through which a circuit passes. Add ignoreEnds to not list the drop points, located at the begging or at the end of the route. The drawing needs to be analyzed.
 
 
 
-#### __ObjectData('eval circuit route', \['<RecordName>'\], \['<FieldName>'\])__ ####
+#### __ObjectData('eval circuit route', ['<RecordName>'], ['<FieldName>'])__ ####
 
 Get path IDs, parameter values or attached record fields from the circuit's used cable paths. The drawing needs to be analyzed.
 
@@ -4196,7 +4197,7 @@ Sum of the surface area of all post subparts.
 
 #### __Width()__ ####
 
-Width(\[optional parameter\])
+Width([optional parameter])
 
 This function is applicable to the following subparts: Wall Bracket, Face Mount, Frame and Panel.
 
@@ -4216,7 +4217,7 @@ For Panel: Width of the panel in elevation.
 
 #### __Width('profile')__ ####
 
-Width('profile', \[optional parameter\])
+Width('profile', [optional parameter])
 
 This function is applicable to the following subparts: Top Rail, Post, Crossbar Top and Bottom, Bar Vertical and Horizontal, Frame.
 
@@ -4236,7 +4237,7 @@ For Bar Vertical and Bar Horizontal: Width of the vertical bars profile.
 
 #### __Height()__ ####
 
-Height(\[optional parameter\])
+Height([optional parameter])
 
 This function is applicable to the Railing object and the following subparts: Top Rail, Wall Bracket, Post, Face Mount, Frame, Panel.
 
@@ -4263,7 +4264,7 @@ For Panel: Height of the panel in elevation.
 
 #### __Height('profile')__ ####
 
-Height('profile', \[optional parameter\])
+Height('profile', [optional parameter])
 
 This function is applicable to the following subparts: Top Rail, Post, Crossbar Top and Bottom, Bar Vertical and Horizontal, Frame.
 
@@ -4283,7 +4284,7 @@ For Bar Vertical and Bar Horizontal: Height of the vertical bars profile.
 
 #### __Count('angle')__ ####
 
-Count('angle', \[optional parameter\])
+Count('angle', [optional parameter])
 
 This function is applicable to the Railing object and the Top Rail.
 
@@ -4299,7 +4300,7 @@ For Top Rail: Number of angles  in the Top Rail subpart.
 
 #### __Angle()__ ####
 
-Angle(\[optional parameter\])
+Angle([optional parameter])
 
 This function is applicable to the following subparts: Bar Vertical and Bar Horizontal.
 
@@ -4315,7 +4316,7 @@ For Bar Horizontal: Angle of the horizontal bar. horizontal is 0°.
 
 #### __Area()__ ####
 
-Area(\[optional parameter\])
+Area([optional parameter])
 
 This function is applicable to the Railing object and the Panel subpart.
 
@@ -4337,7 +4338,7 @@ For Panel: Area of the panel (Width x Height).
 
 #### __Length('')__ ####
 
-Length(\[optional parameter\])
+Length([optional parameter])
 
 This function is applicable to the Railing object and the following subparts: Top Rail, Crossbar Top, Crossbar Bottom, Bar Vertical, Bar Horizontal, Frame.
 
@@ -4376,7 +4377,7 @@ For Face Mount: Maximum Distance between the axes of all Face Mounts.
 
 #### __SurfaceArea()__ ####
 
-SurfaceArea(\[optional parameter\])
+SurfaceArea([optional parameter])
 
 This function is applicable to the following subparts: Top Rail, Wall Bracket, Post, Face Mount, Crossbar Top and Bottom, Bar Vertical and Horizontal, Frame, Panel.
 
@@ -4652,7 +4653,7 @@ Spreadsheet cell:
 ## Specialized for Slab
 
 
-#### __Weight('gross', \[optional parameters\])__ ####
+#### __Weight('gross', [optional parameters])__ ####
 
 Returns the weight of a wall, wall component, slab or slab component. All openings are ignored.
 
@@ -4664,7 +4665,7 @@ Returns the weight of a wall, wall component, slab or slab component. All openin
 
 
 
-#### __Weight('net', \[optional parameters\])__ ####
+#### __Weight('net', [optional parameters])__ ####
 
 Returns the weight of a wall, wall component, slab or slab component.
 
@@ -4784,7 +4785,7 @@ Returns the thickness of a wall, slab, roof or a roof face object or their compo
 
 
 
-#### __Count('modifiers', \[optional parameters\])__ ####
+#### __Count('modifiers', [optional parameters])__ ####
 
 Returns the number of modifiers in a slab or wall. For walls, recesses and projections are counted. For slabs, additions, subtractions and drains are counted.
 
@@ -4794,7 +4795,7 @@ Returns the number of modifiers in a slab or wall. For walls, recesses and proje
 
 
 
-#### __Count('openings', \[optional parameters\])__ ####
+#### __Count('openings', [optional parameters])__ ####
 
 Returns the number of openings in a wall, wall component, slab or slab component.
 
@@ -4871,7 +4872,7 @@ Returns the area of a wall, slab, roof or a roof face object or their components
 
 
 
-#### __Perim('bottom', \[optional parameters\])__ ####
+#### __Perim('bottom', [optional parameters])__ ####
 
 Returns the perimeter of the bottom surface of a slab or slab component.
 
@@ -4883,7 +4884,7 @@ Returns the perimeter of the bottom surface of a slab or slab component.
 
 
 
-#### __Perim('openings bottom', \[optional parameters\])__ ####
+#### __Perim('openings bottom', [optional parameters])__ ####
 
 Returns the sum of the opening perimeters on the bottom surface of a slab or slab component.
 
@@ -4897,7 +4898,7 @@ Returns the sum of the opening perimeters on the bottom surface of a slab or sla
 
 
 
-#### __Perim('openings top', \[optional parameters\])__ ####
+#### __Perim('openings top', [optional parameters])__ ####
 
 Returns the sum of the opening perimeters on the top surface of a slab or slab component.
 
@@ -4911,7 +4912,7 @@ Returns the sum of the opening perimeters on the top surface of a slab or slab c
 
 
 
-#### __Perim('top', \[optional parameters\])__ ####
+#### __Perim('top', [optional parameters])__ ####
 
 Returns the perimeter of the top surface of a slab or slab component.
 
@@ -4923,7 +4924,7 @@ Returns the perimeter of the top surface of a slab or slab component.
 
 
 
-#### __SurfaceArea('bottom gross', \[optional parameters\])__ ####
+#### __SurfaceArea('bottom gross', [optional parameters])__ ####
 
 Returns the area of the bottom surface of a slab or slab component. All openings are ignored.
 
@@ -4940,7 +4941,7 @@ Returns the area of the bottom surface of a slab or slab component. All openings
 =SurfaceArea('bottom gross', 'component=top') returns the gross area of the bottom face of the top component of the slab.
 ```
 
-#### __SurfaceArea('bottom net', \[optional parameters\])__ ####
+#### __SurfaceArea('bottom net', [optional parameters])__ ####
 
 Returns the area of the bottom surface of a slab or slab component.
 
@@ -4963,7 +4964,7 @@ Returns the area of the bottom surface of a slab or slab component.
 =SurfaceArea('bottom net', 'component=top') returns the area of the bottom face of the top component of the slab.
 ```
 
-#### __SurfaceArea('openings bottom', \[optional parameters\])__ ####
+#### __SurfaceArea('openings bottom', [optional parameters])__ ####
 
 Returns the area of the openings on the bottom surface of a slab or slab component.
 
@@ -4986,7 +4987,7 @@ Returns the area of the openings on the bottom surface of a slab or slab compone
 =SurfaceArea('openings bottom', 'component=top') returns the total area of openings on the bottom face of the top component of the slab.
 ```
 
-#### __SurfaceArea('openings top', \[optional parameters\])__ ####
+#### __SurfaceArea('openings top', [optional parameters])__ ####
 
 Returns the area of the openings on the top surface of a slab or slab component.
 
@@ -5009,7 +5010,7 @@ Returns the area of the openings on the top surface of a slab or slab component.
 =SurfaceArea('openings top', 'component=bottom') returns the total area of openings on the top face of the bottom component of the slab.
 ```
 
-#### __SurfaceArea('top gross', \[optional parameters\])__ ####
+#### __SurfaceArea('top gross', [optional parameters])__ ####
 
 Returns the area of the top surface of a slab or slab component. All openings are ignored.
 
@@ -5026,7 +5027,7 @@ Returns the area of the top surface of a slab or slab component. All openings ar
 =SurfaceArea('top gross', 'component=bottom') returns the gross area of the top face of the bottom component of the slab.
 ```
 
-#### __SurfaceArea('top net', \[optional parameters\])__ ####
+#### __SurfaceArea('top net', [optional parameters])__ ####
 
 Returns the area of the top surface of a slab or slab component.
 
@@ -5055,7 +5056,7 @@ Returns the volume of a wall, slab, roof or a roof face object or their componen
 
 
 
-#### __Volume('gross', \[optional parameters\])__ ####
+#### __Volume('gross', [optional parameters])__ ####
 
 Returns the volume of a wall, wall component, slab or slab component. All openings are ignored.
 
@@ -5072,7 +5073,7 @@ Returns the volume of a wall, wall component, slab or slab component. All openin
 =Volume('gross', 'component=core') returns the gross volume of the core wall component.
 ```
 
-#### __Volume('net', \[optional parameters\])__ ####
+#### __Volume('net', [optional parameters])__ ####
 
 Returns the volume of a wall, wall component, slab or slab component.
 
@@ -5103,7 +5104,7 @@ Returns the volume of a wall, wall component, slab or slab component.
 =Volume('net', 'component=core', 'min opening volume=10 cu cm') returns the volume of the core wall component, but only taking openings with a volume of at least 10 cubic centimeters into account.
 ```
 
-#### __Volume('openings', \[optional parameters\])__ ####
+#### __Volume('openings', [optional parameters])__ ####
 
 Returns the volume of the openings in a wall, wall component, slab or slab component.
 
@@ -5152,7 +5153,7 @@ Get parameter value or attached record field from the socket's device.
 ## Specialized for Space
 
 
-#### __ObjectData('finish', field_name, \[delimiter\], \[location\], \[wall_index\])__ ####
+#### __ObjectData('finish', field_name, [delimiter], [location], [wall_index])__ ####
 
 Returns the value of the field named 'field_name' in a Space_Finish record.
 
@@ -5298,7 +5299,7 @@ Spreadsheet cell:
 ## Specialized for Wall
 
 
-#### __Weight('gross', \[optional parameters\])__ ####
+#### __Weight('gross', [optional parameters])__ ####
 
 Returns the weight of a wall, wall component, slab or slab component. All openings are ignored.
 
@@ -5310,7 +5311,7 @@ Returns the weight of a wall, wall component, slab or slab component. All openin
 
 
 
-#### __Weight('net', \[optional parameters\])__ ####
+#### __Weight('net', [optional parameters])__ ####
 
 Returns the weight of a wall, wall component, slab or slab component.
 
@@ -5322,7 +5323,7 @@ Returns the weight of a wall, wall component, slab or slab component.
 
 
 
-#### __FootPrintArea('gross', \[optional parameters\])__ ####
+#### __FootPrintArea('gross', [optional parameters])__ ####
 
 Returns the footprint area of a wall or wall component. All openings are ignored.
 
@@ -5336,7 +5337,7 @@ Returns the footprint area of a wall or wall component. All openings are ignored
 
 
 
-#### __FootPrintArea('net', \[optional parameters\])__ ####
+#### __FootPrintArea('net', [optional parameters])__ ####
 
 Returns the footprint area of a wall or wall component.
 
@@ -5356,7 +5357,7 @@ Returns the footprint area of a wall or wall component.
 
 
 
-#### __FootPrintArea('openings', \[optional parameters\])__ ####
+#### __FootPrintArea('openings', [optional parameters])__ ####
 
 Returns the area of the openings in the footprint of a wall or wall component.
 
@@ -5502,7 +5503,7 @@ Returns the overall height of a wall.
 
 
 
-#### __Count('inserts', \[optional parameters\])__ ####
+#### __Count('inserts', [optional parameters])__ ####
 
 Returns the number of inserts (symbols and parametric objects) in a wall.
 
@@ -5521,7 +5522,7 @@ Returns the number of inserts (symbols and parametric objects) in a wall.
 The difference between Count('inserts') and Count('openings') is that in the rare cases where two inserts share the same opening, Count('inserts') will treat them as different inserts, but Count('openings') will treat them as one large opening.
 ```
 
-#### __Count('modifiers', \[optional parameters\])__ ####
+#### __Count('modifiers', [optional parameters])__ ####
 
 Returns the number of modifiers in a slab or wall. For walls, recesses and projections are counted. For slabs, additions, subtractions and drains are counted.
 
@@ -5531,7 +5532,7 @@ Returns the number of modifiers in a slab or wall. For walls, recesses and proje
 
 
 
-#### __Count('openings', \[optional parameters\])__ ####
+#### __Count('openings', [optional parameters])__ ####
 
 Returns the number of openings in a wall, wall component, slab or slab component.
 
@@ -5656,7 +5657,7 @@ Returns the length of a wall or its components.
 
 
 
-#### __Length('control line avert core', \[optional parameters\])__ ####
+#### __Length('control line avert core', [optional parameters])__ ####
 
 Returns the length of the control line of a wall component on the side that's oriented away from the core component. All openings, recesses, projections and peaks are ignored.
 
@@ -5668,7 +5669,7 @@ Returns the length of the control line of a wall component on the side that's or
 
 
 
-#### __Length('control line center', \[optional parameters\])__ ####
+#### __Length('control line center', [optional parameters])__ ####
 
 Returns the length of the central control line of a wall or wall component. All openings, recesses, projections and peaks are ignored.
 
@@ -5680,7 +5681,7 @@ Returns the length of the central control line of a wall or wall component. All 
 
 
 
-#### __Length('control line facing core', \[optional parameters\])__ ####
+#### __Length('control line facing core', [optional parameters])__ ####
 
 Returns the length of the control line of a wall component on the side that's oriented towards the core component. All openings, recesses, projections and peaks are ignored.
 
@@ -5692,7 +5693,7 @@ Returns the length of the control line of a wall component on the side that's or
 
 
 
-#### __Length('control line left', \[optional parameters\])__ ####
+#### __Length('control line left', [optional parameters])__ ####
 
 Returns the length of the left control line of a wall or wall component. All openings, recesses, projections and peaks are ignored.
 
@@ -5704,7 +5705,7 @@ Returns the length of the left control line of a wall or wall component. All ope
 
 
 
-#### __Length('control line right', \[optional parameters\])__ ####
+#### __Length('control line right', [optional parameters])__ ####
 
 Returns the length of the right control line of a wall or wall component. All openings, recesses, projections and peaks are ignored.
 
@@ -5716,7 +5717,7 @@ Returns the length of the right control line of a wall or wall component. All op
 
 
 
-#### __Length('avert core gross', \[optional parameters\])__ ####
+#### __Length('avert core gross', [optional parameters])__ ####
 
 Returns the length of a wall component along the bottom of the side that's oriented away from the core component. All openings are ignored.
 
@@ -5730,7 +5731,7 @@ Returns the length of a wall component along the bottom of the side that's orien
 
 
 
-#### __Length('avert core net', \[optional parameters\])__ ####
+#### __Length('avert core net', [optional parameters])__ ####
 
 Returns the length of a wall component along the bottom of the side that's oriented away from the core component.
 
@@ -5750,7 +5751,7 @@ Returns the length of a wall component along the bottom of the side that's orien
 
 
 
-#### __Length('center gross', \[optional parameters\])__ ####
+#### __Length('center gross', [optional parameters])__ ####
 
 Returns the length of a wall or wall component along the bottom of the center line. All openings are ignored.
 
@@ -5764,7 +5765,7 @@ Returns the length of a wall or wall component along the bottom of the center li
 
 
 
-#### __Length('center net', \[optional parameters\])__ ####
+#### __Length('center net', [optional parameters])__ ####
 
 Returns the length of a wall or wall component along the bottom of the center line.
 
@@ -5784,7 +5785,7 @@ Returns the length of a wall or wall component along the bottom of the center li
 
 
 
-#### __Length('facing core gross', \[optional parameters\])__ ####
+#### __Length('facing core gross', [optional parameters])__ ####
 
 Returns the length of a wall component along the bottom of the side that's oriented towards the core component. All openings are ignored.
 
@@ -5798,7 +5799,7 @@ Returns the length of a wall component along the bottom of the side that's orien
 
 
 
-#### __Length('facing core net', \[optional parameters\])__ ####
+#### __Length('facing core net', [optional parameters])__ ####
 
 Returns the length of a wall component along the bottom of the side that's oriented towards the core component.
 
@@ -5818,7 +5819,7 @@ Returns the length of a wall component along the bottom of the side that's orien
 
 
 
-#### __Length('left gross', \[optional parameters\])__ ####
+#### __Length('left gross', [optional parameters])__ ####
 
 Returns the length of a wall or wall component along the bottom of the left face. All openings are ignored.
 
@@ -5832,7 +5833,7 @@ Returns the length of a wall or wall component along the bottom of the left face
 
 
 
-#### __Length('left net', \[optional parameters\])__ ####
+#### __Length('left net', [optional parameters])__ ####
 
 Returns the length of a wall or wall component along the bottom of the left face.
 
@@ -5852,7 +5853,7 @@ Returns the length of a wall or wall component along the bottom of the left face
 
 
 
-#### __Length('right gross', \[optional parameters\])__ ####
+#### __Length('right gross', [optional parameters])__ ####
 
 Returns the length of a wall or wall component along the bottom of the right face. All openings are ignored.
 
@@ -5866,7 +5867,7 @@ Returns the length of a wall or wall component along the bottom of the right fac
 
 
 
-#### __Length('right net', \[optional parameters\])__ ####
+#### __Length('right net', [optional parameters])__ ####
 
 Returns the length of a wall or wall component along the bottom of the right face.
 
@@ -5886,7 +5887,7 @@ Returns the length of a wall or wall component along the bottom of the right fac
 
 
 
-#### __Length('openings avert core', \[optional parameters\])__ ####
+#### __Length('openings avert core', [optional parameters])__ ####
 
 Returns the total length of wall or wall component openings along the side of the footprint that's oriented away from the core component.
 
@@ -5906,7 +5907,7 @@ Returns the total length of wall or wall component openings along the side of th
 
 
 
-#### __Length('openings center', \[optional parameters\])__ ####
+#### __Length('openings center', [optional parameters])__ ####
 
 Returns the total length of openings along the center line of the footprint of a wall or wall component.
 
@@ -5926,7 +5927,7 @@ Returns the total length of openings along the center line of the footprint of a
 
 
 
-#### __Length('openings facing core', \[optional parameters\])__ ####
+#### __Length('openings facing core', [optional parameters])__ ####
 
 Returns the total length of wall or wall component openings along the side of the footprint that's oriented towards the core component.
 
@@ -5946,7 +5947,7 @@ Returns the total length of wall or wall component openings along the side of th
 
 
 
-#### __Length('openings left', \[optional parameters\])__ ####
+#### __Length('openings left', [optional parameters])__ ####
 
 Returns the total length of openings along the left side of the footprint of a wall or wall component.
 
@@ -5966,7 +5967,7 @@ Returns the total length of openings along the left side of the footprint of a w
 
 
 
-#### __Length('openings right', \[optional parameters\])__ ####
+#### __Length('openings right', [optional parameters])__ ####
 
 Returns the total length of openings along the right side of the footprint of a wall or wall component.
 
@@ -5986,7 +5987,7 @@ Returns the total length of openings along the right side of the footprint of a 
 
 
 
-#### __SurfaceArea('avert core gross', \[optional parameters\])__ ####
+#### __SurfaceArea('avert core gross', [optional parameters])__ ####
 
 Returns the area of a wall component's surface that's oriented away from the core component. All openings are ignored.
 
@@ -6000,7 +6001,7 @@ Returns the area of a wall component's surface that's oriented away from the cor
 
 
 
-#### __SurfaceArea('avert core net', \[optional parameters\])__ ####
+#### __SurfaceArea('avert core net', [optional parameters])__ ####
 
 Returns the area of a wall component's surface that's oriented away from the core component.
 
@@ -6020,7 +6021,7 @@ Returns the area of a wall component's surface that's oriented away from the cor
 
 
 
-#### __SurfaceArea('center gross', \[optional parameters\])__ ####
+#### __SurfaceArea('center gross', [optional parameters])__ ####
 
 Returns the area along the center line of a wall or wall component. All openings are ignored.
 
@@ -6039,7 +6040,7 @@ Returns the area along the center line of a wall or wall component. All openings
 =SurfaceArea('center gross', 'component=core') returns the gross area along the center line of the core component of the wall.
 ```
 
-#### __SurfaceArea('center net', \[optional parameters\])__ ####
+#### __SurfaceArea('center net', [optional parameters])__ ####
 
 Returns the area along the center line of a wall or wall component.
 
@@ -6074,7 +6075,7 @@ Returns the area along the center line of a wall or wall component.
 =SurfaceArea('center net', 'component=core') returns the area along the center line of the core component of the wall.
 ```
 
-#### __SurfaceArea('facing core gross', \[optional parameters\])__ ####
+#### __SurfaceArea('facing core gross', [optional parameters])__ ####
 
 Returns the area of a wall component's surface that's oriented towards the core component. All openings are ignored.
 
@@ -6088,7 +6089,7 @@ Returns the area of a wall component's surface that's oriented towards the core 
 
 
 
-#### __SurfaceArea('facing core net', \[optional parameters\])__ ####
+#### __SurfaceArea('facing core net', [optional parameters])__ ####
 
 Returns the area of a wall component's surface that's oriented towards the core component.
 
@@ -6108,7 +6109,7 @@ Returns the area of a wall component's surface that's oriented towards the core 
 
 
 
-#### __SurfaceArea('left gross', \[optional parameters\])__ ####
+#### __SurfaceArea('left gross', [optional parameters])__ ####
 
 Returns the area of the left surface of a wall or wall component. All openings are ignored.
 
@@ -6127,7 +6128,7 @@ Returns the area of the left surface of a wall or wall component. All openings a
 =SurfaceArea('left gross', 'component=core') returns the gross area of the left side of the core component of the wall.
 ```
 
-#### __SurfaceArea('left net', \[optional parameters\])__ ####
+#### __SurfaceArea('left net', [optional parameters])__ ####
 
 Returns the area of the left surface of a wall or wall component.
 
@@ -6164,7 +6165,7 @@ Returns the area of the left surface of a wall or wall component.
 =SurfaceArea('left net', 'component=core') returns the area of the left side of the core component of the wall.
 ```
 
-#### __SurfaceArea('openings avert core', \[optional parameters\])__ ####
+#### __SurfaceArea('openings avert core', [optional parameters])__ ####
 
 Returns the area of the openings on a wall component's surface that's oriented away from the core component.
 
@@ -6182,7 +6183,7 @@ Returns the area of the openings on a wall component's surface that's oriented a
 
 
 
-#### __SurfaceArea('openings center', \[optional parameters\])__ ####
+#### __SurfaceArea('openings center', [optional parameters])__ ####
 
 Returns the area of the openings along the center line of a wall or wall component.
 
@@ -6215,7 +6216,7 @@ Returns the area of the openings along the center line of a wall or wall compone
 =SurfaceArea('openings center', 'component=core') returns the total area of openings along the center line of the core component of the wall.
 ```
 
-#### __SurfaceArea('openings facing core', \[optional parameters\])__ ####
+#### __SurfaceArea('openings facing core', [optional parameters])__ ####
 
 Returns the area of the openings on a wall component's surface that's oriented towards the core component.
 
@@ -6233,7 +6234,7 @@ Returns the area of the openings on a wall component's surface that's oriented t
 
 
 
-#### __SurfaceArea('openings left', \[optional parameters\])__ ####
+#### __SurfaceArea('openings left', [optional parameters])__ ####
 
 Returns the area of the openings on the left surface of a wall or wall component.
 
@@ -6266,7 +6267,7 @@ Returns the area of the openings on the left surface of a wall or wall component
 =SurfaceArea('openings left', 'component=core') returns the total area of openings on the left side of the core component of the wall.
 ```
 
-#### __SurfaceArea('openings right', \[optional parameters\])__ ####
+#### __SurfaceArea('openings right', [optional parameters])__ ####
 
 Returns the area of the openings on the right surface of a wall or wall component.
 
@@ -6299,7 +6300,7 @@ Returns the area of the openings on the right surface of a wall or wall componen
 =SurfaceArea('openings right', 'component=core') returns the total area of openings on the right side of the core component of the wall.
 ```
 
-#### __SurfaceArea('right gross', \[optional parameters\])__ ####
+#### __SurfaceArea('right gross', [optional parameters])__ ####
 
 Returns the area of the right surface of a wall or wall component. All openings are ignored.
 
@@ -6318,7 +6319,7 @@ Returns the area of the right surface of a wall or wall component. All openings 
 =SurfaceArea('right gross', 'component=core') returns the gross area of the right side of the core component of the wall.
 ```
 
-#### __SurfaceArea('right net', \[optional parameters\])__ ####
+#### __SurfaceArea('right net', [optional parameters])__ ####
 
 Returns the area of the right surface of a wall or wall component.
 
@@ -6361,7 +6362,7 @@ Returns the volume of a wall, slab, roof or a roof face object or their componen
 
 
 
-#### __Volume('gross', \[optional parameters\])__ ####
+#### __Volume('gross', [optional parameters])__ ####
 
 Returns the volume of a wall, wall component, slab or slab component. All openings are ignored.
 
@@ -6378,7 +6379,7 @@ Returns the volume of a wall, wall component, slab or slab component. All openin
 =Volume('gross', 'component=core') returns the gross volume of the core wall component.
 ```
 
-#### __Volume('net', \[optional parameters\])__ ####
+#### __Volume('net', [optional parameters])__ ####
 
 Returns the volume of a wall, wall component, slab or slab component.
 
@@ -6409,7 +6410,7 @@ Returns the volume of a wall, wall component, slab or slab component.
 =Volume('net', 'component=core', 'min opening volume=10 cu cm') returns the volume of the core wall component, but only taking openings with a volume of at least 10 cubic centimeters into account.
 ```
 
-#### __Volume('openings', \[optional parameters\])__ ####
+#### __Volume('openings', [optional parameters])__ ####
 
 Returns the volume of the openings in a wall, wall component, slab or slab component.
 
@@ -6574,7 +6575,7 @@ Splits a single string into an array of strings using a delimiter, and returns t
 
 ```
 
-#### __txt(value, ToUnit, \[Param1\], \[Param2\], ...)__ ####
+#### __txt(value, ToUnit, [Param1], [Param2], ...)__ ####
 
 Converts a numeric value from document units to the specified units and returns a string representation using the options to control formatting. More information is available in the example.
 
@@ -6739,7 +6740,7 @@ Converts all characters in a text string to lowercase.
 
 ```
 
-#### __TrimLeft(text, \[chars\])__ ####
+#### __TrimLeft(text, [chars])__ ####
 
 Removes leading characters from a text string. The chars argument is a string specifying the set of characters to be removed. If omitted or None, whitespaces will be removed.
 
@@ -6749,7 +6750,7 @@ Removes leading characters from a text string. The chars argument is a string sp
 
 ```
 
-#### __Replace(string, oldString, newString, \[count\])__ ####
+#### __Replace(string, oldString, newString, [count])__ ####
 
 Replaces occurrences of a substring in a text with a different substring. If the optional argument count is given, only the first count occurrences are replaced.
 
@@ -6759,7 +6760,7 @@ Replaces occurrences of a substring in a text with a different substring. If the
 
 ```
 
-#### __TrimRight(text, \[chars\])__ ####
+#### __TrimRight(text, [chars])__ ####
 
 Removes trailing characters from a text string. The chars argument is a string specifying the set of characters to be removed. If omitted or None, whitespaces will be removed.
 
@@ -6769,7 +6770,7 @@ Removes trailing characters from a text string. The chars argument is a string s
 
 ```
 
-#### __Trim(text, \[chars\])__ ####
+#### __Trim(text, [chars])__ ####
 
 Removes leading and trailing characters from a text string. The chars argument is a string specifying the set of characters to be removed. If omitted or None, whitespaces will be removed.
 
@@ -6880,7 +6881,7 @@ Repeats text a given number of times.
 
 ```
 
-#### __Fixed(num, \[decimals\])__ ####
+#### __Fixed(num, [decimals])__ ####
 
 Formats a number as text with a fixed number of decimals.
 
@@ -6921,7 +6922,7 @@ Returns the number (Unicode code point) for the first character of the text.
 
 ```
 
-#### __Find(subtext, text, \[caseSensitive\])__ ####
+#### __Find(subtext, text, [caseSensitive])__ ####
 
 The lowest index in the (text) where substring (subtext) is found. If the optional argument (case) is set to true, case-sensitive search is performed. Index of -1 if (subtext) is not found.
 
@@ -6931,7 +6932,7 @@ The lowest index in the (text) where substring (subtext) is found. If the option
 
 ```
 
-#### __FindPattern(pattern, text, \[caseSensitive\])__ ####
+#### __FindPattern(pattern, text, [caseSensitive])__ ####
 
 The lowest index in the (text) where the regular expression provided in (pattern)  is found.  If the optional argument (case) is set to true, case-sensitive search is performed. Index of -1 if (subtext) is not found. Regular expression is a sequence of characters that specifies a search pattern. Uses ECMAScript syntax for the pattern: https://www.cplusplus.com/reference/regex/ECMAScript/?kw=ECMAScript
 
