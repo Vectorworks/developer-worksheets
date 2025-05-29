@@ -19,7 +19,11 @@ There are two basic types of functions: those that use the values you enter, and
 
 ## Worksheet Criteria
 
-For details about how to specify criteria such as the object type, class, or visibility, refer to the following page: [Search Criteria Format](Search%20Criteria%20Format.md).
+For details about how to specify criteria such as the object type, class, or visibility, refer to the following page: [Search Criteria Format](Articles/Search%20Criteria%20Format.md).
+
+## Worksheet Scripting
+
+Sometimes the report is so complex that simple worksheet functions are not enough. You can use [Worksheet Scripting](Articles/Worksheet%20Scripting.md) to report anything from the drawing.
 
 ## Version Information
 
