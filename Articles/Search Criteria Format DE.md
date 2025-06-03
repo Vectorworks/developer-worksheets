@@ -2,60 +2,60 @@
 
 ### Syntax
 
-Search criteria in scripts are composed of two parts: the **search attribute type specifier** and the **search value**. The search attribute specifier indicates which attribute will be used to filter objects in the document; the search value specifies the value to be found and matched by the search operation. For example, the search criteria term:
+Filterkriterien in Skripten bestehen aus zwei Teilen: dem Suchattribut-Typ und dem Suchwert. Der Suchattribut-Typ gibt an, welches Attribut zum Filtern von Objekten im Dokument verwendet wird; der Suchwert gibt den Wert an, der durch den Filtervorgang gefunden und abgeglichen werden soll. So gibt z. B. der Filterkriterien-Ausdruck
 
 ```pascal
-(C=’Edged’)
+(C=’Wand’)
 ```
 
-indicates that a search should be performed for any objects whose class is *Edged*. In the criteria term, the C attribute type indicates that the search should be performed on the class attribute of objects in the document. The search value *Edged* indicates what class will be a match in the search operation.
+an, dass nach allen Objekten gesucht werden soll, deren Klasse Wand ist. Im Filterkriterien-Ausdruck gibt der Attributtyp C an, dass die Suche nach dem Klassenattribut von Objekten im Dokument durchgeführt werden soll. Der Suchwert Wand gibt an, welche Klasse beim Filtern als übereinstimmend gewertet wird.
 
-The general syntax for search criteria terms is:
+Die allgemeine Syntax für Filterkriterien-Ausdrücke lautet:
 
 ```pascal
-(<search attribute type> = <search value>)
+(<Suchattribut Type> = <Suchwert>)
 ```
 
-Parentheses are traditionally used to enclose and indicate individual search terms; they are not required.
+Klammern werden üblicherweise verwendet, um einzelne Filter-Ausdrücke einzuschließen und zu kennzeichnen; sie sind nicht erforderlich.
 
-### Multiple Search Terms
+### Mehrfache Filterkriterien
 
-Multiple criteria terms may be specified in order to narrow the search operation to a more specific subset of objects.
-Multiple search criteria are created using the & operator to chain individual search criteria terms. In the term
+Es können mehrere Kriterien angegeben werden, um den Suchvorgang auf eine spezifischere Untergruppe von Objekten einzuschränken. Mehrere Filterkriterien werden mit dem Operator & erstellt, um einzelne Filterkriterien zu verketten. Im Ausdruck
+
 
 ```pascal
-((L='New Construction') & (C='Phase 1'))
+((L='Neue Bebauung') & (C='Phase 1'))
 ```
 
-two search terms are combined to filter for a specific set of objects, in this case any objects on the layer *New Construction* whose class is *Phase 1*. To narrow the search even further, simply add additional search terms:
+werden zwei Suchbegriffe kombiniert, um nach einer bestimmten Gruppe von Objekten zu filtern, in diesem Fall nach allen Objekten auf der Ebene Neue Bebauung, deren Klasse Phase 1 ist. Um die Suche noch weiter einzugrenzen, fügen Sie einfach weitere Suchbegriffe hinzu:
 
 ```pascal
-((L='New Construction') & (C='Phase 1') & (SEL=TRUE))
+((L='Neue Bebauung') & (C='Phase 1') & (SEL=TRUE))
 ```
 
-In the example, the selection status attribute type was added, so now only selected objects in the *Phase 1* class on layer *New Construction* will match the search.
+Im Beispiel wurde der Attributtyp "Aktivierungsstatus" hinzugefügt, so dass jetzt nur aktivierte Objekte der Klasse "Phase 1" auf der Ebene "Neue Bebauung" der Suche entsprechen.
 
-### Multiple Search Values
+### Mehrfache Suchwerte
 
-It is also possible to filter for multiple match values using search criteria. Multiple match values use the following syntax:
+Es ist auch möglich, anhand von Filterkriterien nach mehreren übereinstimmenden Werten zu filtern. Mehrere übereinstimmende Werte verwenden die folgende Syntax:
 
 ```pascal
-(<attribute type> IN [<search value>,<search value>,...])
+(<Attribut Type> IN [<Suchwert>,<Suchwert>,...])
 ```
 
-When a search term is specified in this fashion, objects matching any value in the comma delimited value list will be included in the list of objects matching the search. For example:
+Wenn ein Suchbegriff auf diese Weise angegeben wird, werden Objekte, die mit einem beliebigen Wert in der durch Komma getrennten Werteliste übereinstimmen, in die Liste der Objekte aufgenommen, die der Suche entsprechen. Zum Beispiel:
 
 ```pascal
-(R IN ['Part Data','Subassembly Data','Assembly Data'])
+(R IN ['Bauteildaten','Baugruppendaten','Montagedaten'])
 ```
 
-A search using the above term will match any objects with an attached record matching one of the records in the search list.
+Eine Suche mit dem oben gezeigten Filterkriterien-Ausdruck führt zu allen Objekten mit einer verknüpften Datenbank, der mit einer der Datenbanken in der Suchliste übereinstimmen.
 
-## Attribute Types
+## Attribut-Typen
 
-These standard attribute types are available for use in search terms.
+Diese Standard-Attribut-Typen sind für die Verwendung in Suchbegriffen verfügbar.
 
-| Attribute | Shortcut | Description | Notes |
+| Attribut | Tastenkürzel | Beschreibung | Bemerkungen |
 |-----------|----------|-------------|-------|
 | All objects | (ALL) | This specifier will search for all objects in the document. | |
 | Descend into plug‐in objects | (INOBJECT) | This traversal specifier instructs the search to look inside plug-in object containers. | |
@@ -103,103 +103,103 @@ These standard attribute types are available for use in search terms.
 | Flipped Status | (ISFLIPPED) | The flipped status specifier will search for objects based on their flipped state. | |
 | Location | (LOC) | The location specifier will search for objects that are within the boundary of the specified named object. The search value is a *STRING* value which is up to 64 characters in length (literals and variables are supported). | |
 
-## Specialized Searches
+## Spezialisiertes Filtern
 
-In addition to the standard attribute types available for use in search terms, scripts also provide specialized search attribute types for additional flexibility in searching a file.
+Zusätzlich zu den Standard-Attributtypen, die für die Verwendung in Filterausdrücken zur Verfügung stehen, bieten Skripte auch spezielle Filter-Attributtypen für zusätzliche Flexibilität bei der Suche in einer Datei.
 
-### Record Field Values
+### Werte in Datenbankfeldern
 
-Record fields may be searched for specific matching values using a specialized attribute type to query the field value.
-The syntax for querying record fields is:
-
-```pascal
-(<record name>.<field name>[< = |<> |> |>= |< |<= ><search value>])
-```
-
-The record and field names are STRING values and should be enclosed in single quotes. Any one of the optional comparison operators can be used to focus the search on a specific subset of items which have the attached record. For example:
+Datenbankfelder können mit Hilfe eines speziellen Attributtyps zur Abfrage des Feldwerts nach bestimmten übereinstimmenden Werten durchsucht werden. Die Syntax für die Abfrage von Datenbankfeldern lautet:
 
 ```pascal
-('Assembly Data'.'Base Cost' < 250.00)
+(<Datenbankname>.<Feldname>[< = |<> |> |>= |< |<= ><Suchwert>])
 ```
 
-will search for any items with the attached record whose base cost is less than 250.00 dollars.
-
-```[CMP]``` undocumented but very useful feature: wildcards ? and * can be used in search values. e.g.
+Die Datenbank- und Feldnamen sind STRING-Werte und sollten in einfache Anführungszeichen gesetzt werden. Jeder der optionalen Vergleichsoperatoren kann verwendet werden, um die Suche auf eine bestimmte Teilmenge von Elementen zu fokussieren, die mit der Datenbank verknüpft sind. So wird zum Beispiel mit
 
 ```pascal
-('Device'.'Name' = 'VJF_*')
+('Montagedaten'.'Grundkosten' < 250.00)
 ```
 
-will match all fields whose values begin with VJF_. My tests show that you can have multiple instances of * and ? in a search term and they behave quite intelligently. So you can search for strings containing a sub string for example.
+nach Elementen gesucht, die mit der Datenbank verknüpft sind und deren Grundkosten weniger als 250.00 betragen.
 
-### Search Symbol Instances (INSYMBOL)
-
-The *INSYMBOL* attribute specifier will cause the search to enter any symbols encountered and perform a search on the symbols’ definition. For example, suppose you are laying out a large office and wish to count the total number of desk components that will need to be purchased. Your document contains a mixture of individual desk and desk return symbols, plus symbols which are comprised of a combination of the two desk components. A search using the term
+```[CMP]``` undokumentierte, aber sehr nützliche Funktion: Die Wildcards ? und * können in Suchwerten verwendet werden. So findet zum Beispiel
 
 ```pascal
-(S IN ['3660 Desk','3660 LH Return'])
+('Gerät'.'Name' = 'VJF_*')
 ```
 
-will return an inaccurate count, as it does not include instances of those symbols which are themselves inside another symbol. Adding the INSYMBOL type specifier to the term:
+alle Felder, deren Werte mit "VJF_" beginnen. Meine Tests haben gezeigt, dass mehrere Instanzen von * und ? in einem Suchbegriff verwendet werden können und dass diese sich ziemlich intelligent verhalten. So kann zum Beispiel nach Strings gesucht werden, die einen Teilstring enthalten.
+
+### In Symbolinstanzen suchen (INSYMBOL)
+
+Der Spezifikator *INSYMBOL* veranlasst die Suche, in allen gefundenen Symbolen nach der Symboldefinition zu suchen. Angenommen, Sie richten ein großes Büro ein und möchten die Gesamtzahl der zu beschaffenden Schreibtischteile zählen. Ihr Dokument enthält eine Mischung aus Symbolen für einzelne Schreibtische und Schubladenelemente sowie Symbole, die sich aus einer Kombination der beiden Schreibtischkomponenten zusammensetzen. Eine Suche nach dem Ausdruck
 
 ```pascal
-((S IN ['3660 Desk','LH Return']) & (INSYMBOL))
+(S IN ['3660 Schreibtisch','3660 LH Schubladenelement'])
 ```
 
-will force the search to enter any symbols encountered and detect any nested instances of the symbols in the search term.
-
-### Search Plug-in Objects (INOBJECT)
-
-The *INOBJECT* specifier causes the search to enter plug‐in objects and also evaluate their component objects.
-Normally, components of plug‐in objects and symbols are ignored by search criteria. The INSYMBOL and INOBJECT specifiers affect the traversal of the drawing and cause more objects to be evaluated against the search criteria.
-
-For example, to count the number of rectangles in the drawing, including rectangles that are inside symbols and plug‐in objects, use the following:
+wird eine ungenaue Zählung zurückgegeben, da Instanzen von Symbolen, die selbst innerhalb eines anderen Symbols liegen, nicht berücksichtigt werden. Fügen Sie den Typ-Spezifikator INSYMBOL zum Ausdruck hinzu:
 
 ```pascal
-COUNT(INSYMBOL & INOBJECT & (T=RECT))
+((S IN ['3660 Schreibtisch','LH Schubladenelement']) & (INSYMBOL))
 ```
 
-### Search Viewport Instances (INVIEWPORT)
+zwingt die Suche, in allen gefundenen Symbolen zu suchen und alle eingebetteten Instanzen der Symbole im Suchausdruck zu erkennen.
 
-The *INVIEWPORT* attribute specifier will cause the search to enter the annotation space of any viewports encountered and perform a search. For example, you may wish to search for drawing labels, or perhaps dimensions, within the annotation space. A search using the term
+
+### In Intelligenten Objekten suchen (INOBJECT)
+
+Der Spezifikator *INOBJECT* veranlasst die Suche, in Plug-in-Objekte zu suchen und auch deren einzelne Bestandteile auszuwerten. Normalerweise werden Unterobjekte von Plug-in-Objekten und Symbolen von den Filterkriterien ignoriert. Die Spezifikatoren INSYMBOL und INOBJECT beeinflussen das Durchlaufen der Zeichnung und bewirken, dass mehr Objekte anhand der Filterkriterien ausgewertet werden.
+
+Um zum Beispiel die Anzahl der Rechtecke in der Zeichnung zu zählen, einschließlich der Rechtecke, die sich innerhalb von Symbolen und Plug-in-Objekten befinden, verwenden Sie den folgenden Ausdruck:
 
 ```pascal
-(S IN [T=DIMENSION])
+ZÄHLEN(INSYMBOL & INOBJECT & (T=RECHTECK))
 ```
 
-will return an inaccurate count, as it does not include viewport instances. Adding the *INVIEWPORT* type specifier to the term:
+### In Ansichtsbereichen suchen (INVIEWPORT)
+
+Der Spezifikator *INVIEWPORT* veranlasst die Suche, in den Ergänzungen aller gefundenen Ansichtsbereiche zu suchen Sie können z. B. nach Zeichnungsbeschriftungen oder Bemaßungen innerhalb der Ergänzung suchen. Eine Suche mit dem Ausdruck
 
 ```pascal
-(S IN (INVIEWPORT)&(T=DIMENSION))
+(S IN [T=BEMASSUNG])
 ```
 
-will force the search to detect any dimensions in the annotation space of viewports.
-
-In a similar way, you can exclude non‐referenced design layer viewports with the specifier *NOTINDLVP* and exclude referenced design layer viewports with *NOTINREFDLVP*.
+wird eine ungenaue Anzahl zurückgeben, da er keine Ansichtsbereiche enthält. Fügen Sie den Typ-Spezifikator INVIEWPORT zum Ausdruck hinzu:
 
 ```pascal
-(S IN (NOTINDLVP)&(PON='Door'))
+(S IN (INVIEWPORT)&(T= BEMASSUNG))
 ```
-finds all doors that are not in non‐referenced design layer viewports.
+
+zwingt die Suche, alle Bemaßungen in den Ergänzungen der Ansichtsbereiche zu finden.
+
+Auf ähnliche Weise können Sie nicht referenzierte Ansichtsbereiche auf Konstruktionsebenen mit dem Spezifikator *NOTINDLVP* und referenzierte Ansichtsbereiche auf Konstruktionsebenen mit *NOTINREFDLVP* ausschließen..
 
 ```pascal
-(S IN (NOTINREFDLVP)&(PON='Door'))
+(S IN (NOTINDLVP)&(PON='Door CW'))
 ```
-finds all doors that are not in referenced design layer viewports.
-
-### Location (LOC)
-
-The *LOC* specifier finds objects that are located within the bounds of a named object, like a fence.
-
-### Symbol Flip Status (ISFLIPPED)
-
-The *ISFLIPPED* attribute specifier will check the flipped status of symbols or other objects. For example, to perform a count of all flipped instances of a particular symbol:
+findet alle Türen, die sich nicht in nicht referenzierten Ansichtsbereichen auf Konstruktionsebenen befinden.
 
 ```pascal
-((S=’3680 Door’) & (ISFLIPPED))
+(S IN (NOTINREFDLVP)&(PON='Door CW'))
+```
+findet alle Türen, die sich nicht in referenzierten Ansichtsbereichen auf Konstruktionsebenen befinden.
+
+### Ort (LOC)
+
+Der *LOC*-Spezifikator findet Objekte, die sich innerhalb der Grenzen eines benannten Objekts befinden, z. B. innerhalb eines Zauns.
+
+### Spiegelungsstatus eines Symbols (GESPIEGELT)
+
+Der Spezifikator *GESPIEGELT* prüft den Spiegelungsstatus von Symbolen oder anderen Objekten. Um zum Beispiel die Anzahl aller gespiegelten Instanzen eines bestimmten Symbols festzustellen, findet der Ausdruck:
+
+```pascal
+((S=’Zargentür’) & (GESPIEGELT))
 ```
 
-will find only those instances of the symbol which have been flipped. The *ISFLIPPED* specifier is useful for determining orientation of objects for editing or related tasks.
+nur die Instanzen des Symbols, die gespiegelt wurden. Der GESPIEGELT-Spezifikator ist nützlich, um die Ausrichtung von Objekten für die Bearbeitung oder verwandte Aufgaben herauszufinden.
+
 
 ### Project Sharing criteria
 
@@ -233,15 +233,16 @@ The container modification status will match objects that have been modified dir
 (MOCMODIFIED=TRUE)
 ```
 
-### All Objects (ALL)
 
-Using the *ALL* attribute type specifier will select all the objects in the document.
+### Alle Objekte (ALL)
 
-## Search Criteria Tables
+Mit dem Attributtyp *ALL* werden alle Objekte im Dokument aktiviert. 
 
-The script criteria attribute specifiers are listed in the following table.
+## Filterkriterien-Tabelle
 
-| Attribute Type | Type Selector | Example |
+Die Attributtypen für Filterkriterien sind in der folgenden Tabelle aufgelistet.
+
+| Attributtyp | Typauswahl | Beispiel |
 |----------------|---------------|---------|
 | All objects | ALL | n/a |
 | Descend into plug‐in objects | INOBJECT | (T=RECT) & INOBJECT |
@@ -331,11 +332,11 @@ The script criteria attribute specifiers are listed in the following table.
 | Wall | WALL | T=WALL |
 | Worksheet | SPRDSHEET | T=SPRDSHEET |
 
-### Search Criteria Sub Types
+### Filterkriterien-Untertypen
 
-When using the ST object type selector for objects other than plug‐in objects, the following sub types are available.
+Verwenden Sie die ST-Objekttyp-Auswahl für Objekte, die keine Plug-in-Objekte sind, stehen die folgenden Untertypen zur Verfügung:
 
-| Object Sub Type | Object Type | Sub Type Selector | Example |
+| Objekt-Untertyp	| Objekttyp | Untertyp-Auswahl | Beispiel |
 |----------------|-------------|-------------------|---------|
 | Directional Light | Light | DIRLIGHT | ST=DIRLIGHT |
 | Spot Light | Light | SPOTLIGHT | ST=SPOTLIGHT |
