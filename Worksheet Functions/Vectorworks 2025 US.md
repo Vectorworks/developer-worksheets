@@ -8,8 +8,6 @@ All function descriptions below use US notation.
 
 In European notation, the decimal "." should be "," and the separator "," should become ";".
 
- **❗❗❗ Note:** <span style='color:red'>This page is automatically generated.</span> If you see changes that need to be done, please contact [devsupport@vectorworks.net](mailto:devsupport@vectorworks.net).
-
 
 
 ## Contents

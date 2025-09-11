@@ -6,6 +6,7 @@ Klicken Sie auf die entsprechende Version und Distribution, um die Liste der Tab
 
 |  | International | Deutsch
 | --- | --- | ---
+| 2026 | [Latest](Worksheet%20Functions/Vectorworks%202026%20US.md) | Noch nicht verfügbar
 | 2025 | [Latest](Worksheet%20Functions/Vectorworks%202025%20US.md) | [Latest](Worksheet%20Functions/Vectorworks%202025%20DE.md)
 | 2024 | [Latest](Worksheet%20Functions/Vectorworks%202024%20US.md) | [Latest](Worksheet%20Functions/Vectorworks%202024%20DE.md)
 
