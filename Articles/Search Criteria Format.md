@@ -293,72 +293,10 @@ The script criteria attribute specifiers are listed in the following table.
 | Modification status in Project Sharing | MODIFIED | BOOLEAN value |
 | Object or contents modification status in Project Sharing | MOCMODIFIED | BOOLEAN value |
 
-| Object Type | Type Selector | Example |
-|-------------|---------------|---------|
-| 2D Locus | LOCUS | T=LOCUS |
-| 3D Locus | LOCUS3D | T=LOCUS3D |
-| 3D Polygon | POLY3D | T=POLY3D |
-| Arc | ARC | T=ARC |
-| Bitmap Image | BITMAP | T=BITMAP |
-| Component Index<br>(objects that have components;<br>available only in IFC mapping formulas) | INDEX | T=INDEX |
-| Cone, Sphere, Pyramid | SOLID | T=SOLID |
-| CSG Solid | CSGSOLID | T=CSGSOLID |
-| Dimension | DIMENSION | T=DIMENSION |
-| Extrude | XTRD | T=XTRD |
-| Freehand | FHAND | T=FHAND |
-| Group | GROUP | T=GROUP |
-| Layer Link | LAYERLINK | T=LAYERLINK |
-| Line | LINE | T=LINE |
-| Mesh | MESH | T=MESH |
-| Multiple Extrude | MXTRD | T=MXTRD |
-| Oval | OVAL | T=OVAL |
-| PICT Image | PICT | T=PICT |
-| Plug-in Object | PLUGINOBJECT | T=PLUGINOBJECT |
-| Polygon | POLY | T=POLY |
-| Polyline | POLYLINE | T=POLYLINE |
-| Quarter Arc | QARC | T=QARC |
-| Rectangle | RECT | T=RECT |
-| Roof | ROOF | T=ROOF |
-| Roof Element | ROOFELEMENT | T=ROOFELEMENT |
-| Roof Face, Floor, Column | SLAB | T=SLAB |
-| Round Wall | ROUNDWALL | T=ROUNDWALL |
-| Rounded Rectangle | RRECT | T=RRECT |
-| Sub Type<br>(all objects except plug-in objects; <br>available sub types are listed in<br>[Search Criteria Sub Types](VS:Search_Criteria#Search Criteria Sub Types) ) | ST | ST=CONE |
-| Sub Type (plug-in object names only) | PON | PON=“DOOR” |
-| Sweep | SWEEP | T=SWEEP |
-| Symbol | SYMBOL | T=SYMBOL |
-| Text | TEXT | T=TEXT |
-| Wall | WALL | T=WALL |
-| Worksheet | SPRDSHEET | T=SPRDSHEET |
 
-### Search Criteria Sub Types
+## Search criteria object types and subtypes
 
-When using the ST object type selector for objects other than plug‐in objects, the following sub types are available.
+A full list of criteria object types and criteria sub types including examples, can be found here:
 
-| Object Sub Type | Object Type | Sub Type Selector | Example |
-|----------------|-------------|-------------------|---------|
-| Directional Light | Light | DIRLIGHT | ST=DIRLIGHT |
-| Spot Light | Light | SPOTLIGHT | ST=SPOTLIGHT |
-| Point Light | Light | POINTLIGHT | ST=POINTLIGHT |
-| Custom Light | Light | CUSTLIGHT | ST=CUSTLIGHT |
-| Area Light | Light | AREALIGHT | ST=AREALIGHT |
-| Line Light | Light | LINELIGHT | ST=LINELIGHT |
-| Regular Viewport | Viewport | REGVIEWPORT | ST=REGVIEWPORT |
-| Section Viewport | Viewport | SECTVIEWPORT | ST=SECTVIEWPORT |
-| Floor | Floor | FLOOR | ST=FLOOR |
-| Roof Face | Roof face | ROOFFACE | ST=ROOFFACE |
-| Pillar | Pillar | PILLAR | ST=PILLAR |
-| Cone | Solid | CONE | ST=CONE |
-| Sphere | Solid | SPHERE | ST=SPHERE |
-| Hemisphere | Solid | HEMISPHERE | ST=HEMISPHERE |
-| Circle | Arc | CIRCLE | ST=CIRCLE |
-| Opened Arc | Arc | OPENEDARC | ST=OPENEDARC |
-| Solid Subtraction | CSG Solid | CSGSUBTR | ST=CSGSUBTR |
-| Solid Addition | CSG Solid | CSGADD | ST=CSGADD |
-| Solid Intersection | CSG Solid | CSGINTER | ST=CSGINTER |
-| Solid Section | CSG Solid | CSGSECT | ST=CSGSECT |
-| Shell | CSG Solid | CSGSHELL | ST=CSGSHELL |
-| Chamfer | CSG Solid | CSGCHAMFER | ST=CSGCHAMFER |
-| Fillet | CSG Solid | CSGFILLET | ST=CSGFILLET |
-| Control Point Based NURBS Surface | NURBS Surface | NURBSSURFCTRLP | ST=NURBSSURFCTRLP |
-| Interpolated NURBS Surface | NURBS Surface | NURBSSURFINTERP | ST=NURBSSURFINTERP |
+[Vectorworks Object Types and Subtypes](https://github.com/Vectorworks/developer-scripting/blob/main/Function%20Reference/Appendix/pages/Appendix%20D%20-%20Vectorworks%20Object%20Types%20and%20Subtypes.md)
+
