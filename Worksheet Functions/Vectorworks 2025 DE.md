@@ -1,51 +1,51 @@
 Tabellenfunktionen
 
-Stand: Vectorworks 2025 Update 5 (810264)
+Stand: Vectorworks 2025 Update 8 (841679)
 
 ## Contents
 - [Allgemein](#allgemein)
-- [Funktionen für Adapter](#funktionen-für-adapter)
-- [Funktionen für Anschluss](#funktionen-für-anschluss)
-- [Funktionen für Arbeitsplatte](#funktionen-für-arbeitsplatte)
-- [Funktionen für Assembly Frame Segment](#funktionen-für-assembly-fürame-segment)
-- [Funktionen für Aussparung](#funktionen-für-aussparung)
-- [Funktionen für Belag/Weg](#funktionen-für-belagweg)
-- [Funktionen für Boden/Decke](#funktionen-für-bodendecke)
-- [Funktionen für Dach](#funktionen-für-dach)
-- [Funktionen für Door](#funktionen-für-door)
-- [Funktionen für Door and Window Assembly](#funktionen-für-door-and-window-assembly)
-- [Funktionen für Einfassung](#funktionen-für-einfassung)
-- [Funktionen für Fenster](#funktionen-für-fenster)
-- [Funktionen für Flächenpflanzung](#funktionen-für-flchenpflanzung)
-- [Funktionen für Geländemodell](#funktionen-für-gelndemodell)
-- [Funktionen für Geländer](#funktionen-für-gelnder)
-- [Funktionen für Geländer/Zaun Classic](#funktionen-für-gelnderzaun-classic)
-- [Funktionen für Gerät](#funktionen-für-gert)
-- [Funktionen für Hecke](#funktionen-für-hecke)
-- [Funktionen für Kabel](#funktionen-für-kabel)
-- [Funktionen für Lichtschacht](#funktionen-für-lichtschacht)
-- [Funktionen für Marionette Object](#funktionen-für-marionette-object)
-- [Funktionen für Panel](#funktionen-für-panel)
+- [Funktionen für Adapter](#funktionen-fr-adapter)
+- [Funktionen für Anschluss](#funktionen-fr-anschluss)
+- [Funktionen für Arbeitsplatte](#funktionen-fr-arbeitsplatte)
+- [Funktionen für Assembly Frame Segment](#funktionen-fr-assembly-frame-segment)
+- [Funktionen für Aussparung](#funktionen-fr-aussparung)
+- [Funktionen für Belag/Weg](#funktionen-fr-belagweg)
+- [Funktionen für Boden/Decke](#funktionen-fr-bodendecke)
+- [Funktionen für Dach](#funktionen-fr-dach)
+- [Funktionen für Door](#funktionen-fr-door)
+- [Funktionen für Door and Window Assembly](#funktionen-fr-door-and-window-assembly)
+- [Funktionen für Einfassung](#funktionen-fr-einfassung)
+- [Funktionen für Fenster](#funktionen-fr-fenster)
+- [Funktionen für Flächenpflanzung](#funktionen-fr-flchenpflanzung)
+- [Funktionen für Geländemodell](#funktionen-fr-gelndemodell)
+- [Funktionen für Geländer](#funktionen-fr-gelnder)
+- [Funktionen für Geländer/Zaun Classic](#funktionen-fr-gelnderzaun-classic)
+- [Funktionen für Gerät](#funktionen-fr-gert)
+- [Funktionen für Hecke](#funktionen-fr-hecke)
+- [Funktionen für Kabel](#funktionen-fr-kabel)
+- [Funktionen für Lichtschacht](#funktionen-fr-lichtschacht)
+- [Funktionen für Marionette Object](#funktionen-fr-marionette-object)
+- [Funktionen für Panel](#funktionen-fr-panel)
   - [Verbinder](#verbinder)
-- [Funktionen für Pflanze](#funktionen-für-pflanze)
-- [Funktionen für Pfosten](#funktionen-für-pfosten)
+- [Funktionen für Pflanze](#funktionen-fr-pflanze)
+- [Funktionen für Pfosten](#funktionen-fr-pfosten)
   - [Riegel](#riegel)
     - [Fassade](#fassade)
-- [Funktionen für Profillinie](#funktionen-für-profillinie)
-- [Funktionen für Querprofile](#funktionen-für-querprofile)
-- [Funktionen für Rampe](#funktionen-für-rampe)
-- [Funktionen für Raum](#funktionen-für-raum)
-- [Funktionen für Schaltkreis](#funktionen-für-schaltkreis)
-- [Funktionen für Scheinwerfer](#funktionen-für-scheinwerfer)
-- [Funktionen für Symbollinie Classic](#funktionen-für-symbollinie-classic)
-- [Funktionen für Tragwerkselement](#funktionen-für-tragwerkselement)
-- [Funktionen für Tür](#funktionen-für-tr)
-- [Funktionen für Verteiler](#funktionen-für-verteiler)
-- [Funktionen für Wand](#funktionen-für-wand)
-- [Funktionen für WinDoor 6.0](#funktionen-für-windoor-60)
-- [Funktionen für Window](#funktionen-für-window)
-- [Funktionen für XPlanung](#funktionen-für-xplanung)
-- [Funktionen für Zaun](#funktionen-für-zaun)
+- [Funktionen für Profillinie](#funktionen-fr-profillinie)
+- [Funktionen für Querprofile](#funktionen-fr-querprofile)
+- [Funktionen für Rampe](#funktionen-fr-rampe)
+- [Funktionen für Raum](#funktionen-fr-raum)
+- [Funktionen für Schaltkreis](#funktionen-fr-schaltkreis)
+- [Funktionen für Scheinwerfer](#funktionen-fr-scheinwerfer)
+- [Funktionen für Symbollinie Classic](#funktionen-fr-symbollinie-classic)
+- [Funktionen für Tragwerkselement](#funktionen-fr-tragwerkselement)
+- [Funktionen für Tür](#funktionen-fr-tr)
+- [Funktionen für Verteiler](#funktionen-fr-verteiler)
+- [Funktionen für Wand](#funktionen-fr-wand)
+- [Funktionen für WinDoor 6.0](#funktionen-fr-windoor-60)
+- [Funktionen für Window](#funktionen-fr-window)
+- [Funktionen für XPlanung](#funktionen-fr-xplanung)
+- [Funktionen für Zaun](#funktionen-fr-zaun)
 - [Logik](#logik)
 - [Math. Formeln](#math-formeln)
 - [Objekte](#objekte)
@@ -2935,7 +2935,6 @@ Rampenpodestkörper: Projizierte Grundfläche des Rampenpodestkörpers.
 
 
 
-
 #### __Grundfläche('')__ ####
 
 Die Funktion kann auf das Rampenobjekt und die folgenden Unterobjekte angewandt werden: Rampenlaufkörper 1, Rampenpodestkörper.
@@ -3121,7 +3120,8 @@ Diese Funktion ist auf Raumobjekte und dessen Unterobjekte anwendbar, die mit ei
 ```python
 In einer Filterzeile einer Objektliste, für alle Raumobjekte.
 =Objektdaten('Belag', 'PosNr', ', ') - Listet die Positionsnummer (bzw. Artikel- oder Bestellnummer), aller in einem Raum verwendeten Beläge auf, getrennt durch ein Komma.
-=Objektdaten('Belag', 'PosNr', '') - Listet die Positionsnummer aller in einem Raum verwendeten Beläge auf, jeweils in einer neuen Zeile.
+=Objektdaten('Belag', 'PosNr', '
+') - Listet die Positionsnummer aller in einem Raum verwendeten Beläge auf, jeweils in einer neuen Zeile.
 =Objektdaten('Belag', 'PosNr', ', ', 'Boden') - Listet die Positionsnummer aller in einem Raum verwendeten Beläge für Böden auf.
 =Objektdaten('Belag', 'PosNr', ', ', 'Wände') - Listet die Positionsnummer aller in einem Raum verwendeten Beläge für Wände auf.
 =Objektdaten('Belag', 'PosNr', ', ', 'Wände', 1) - Listet die Positionsnummer aller in einem Raum verwendeten Beläge für die erste Wand auf.
@@ -3303,7 +3303,6 @@ Index: (Optional) Welcher Wert zurückgegeben wird, wenn mehrere Werte definiert
 =OBJEKTDATEN('xplanung'; 'hoehenangabe'; 0; 'h') Gibt den Wert des Attributs 'h' der ersten Hoehenangabe zurück.
 
 =OBJEKTDATEN('xplanung'; 'hoehenangabe'; 2; 'hoehenbezug:kurz')	Gibt die Kurzform des Werts des Attributs 'hoehenbezug' der dritten Hoehenangabe zurück.
-
 ```
 
 ## Funktionen für Tragwerkselement
@@ -5047,7 +5046,6 @@ Index: (Optional) Welcher Wert zurückgegeben wird, wenn mehrere Werte definiert
 =OBJEKTDATEN('xplanung'; 'hoehenangabe'; 0; 'h') Gibt den Wert des Attributs 'h' der ersten Hoehenangabe zurück.
 
 =OBJEKTDATEN('xplanung'; 'hoehenangabe'; 2; 'hoehenbezug:kurz')	Gibt die Kurzform des Werts des Attributs 'hoehenbezug' der dritten Hoehenangabe zurück.
-
 ```
 
 ## Funktionen für Zaun
