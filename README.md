@@ -4,11 +4,11 @@ Click on the appropirate version and distribution to see the worksheet functions
 
 Klicken Sie auf die entsprechende Version und Distribution, um die Liste der Tabellenfunktionen dafür zu sehen.
 
-|  | International | Deutsch
-| --- | --- | ---
-| 2026 | [Latest](Worksheet%20Functions/Vectorworks%202026%20US.md) | [Latest](Worksheet%20Functions/Vectorworks%202026%20DE.md)
-| 2025 | [Latest](Worksheet%20Functions/Vectorworks%202025%20US.md) | [Latest](Worksheet%20Functions/Vectorworks%202025%20DE.md)
-| 2024 | [Latest](Worksheet%20Functions/Vectorworks%202024%20US.md) | [Latest](Worksheet%20Functions/Vectorworks%202024%20DE.md)
+|  | International | Deutsch | 日本語
+| --- | --- | --- | ---
+| 2026 | [Latest](Worksheet%20Functions/Vectorworks%202026%20US.md) | [Latest](Worksheet%20Functions/Vectorworks%202026%20DE.md) | [最新](Worksheet%20Functions/Vectorworks%202026%20JA.md)
+| 2025 | [Latest](Worksheet%20Functions/Vectorworks%202025%20US.md) | [Latest](Worksheet%20Functions/Vectorworks%202025%20DE.md) | -
+| 2024 | [Latest](Worksheet%20Functions/Vectorworks%202024%20US.md) | [Latest](Worksheet%20Functions/Vectorworks%202024%20DE.md) | -
 
 ## Basic Information
 
