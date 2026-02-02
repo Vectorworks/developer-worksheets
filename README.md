@@ -10,6 +10,17 @@ Klicken Sie auf die entsprechende Version und Distribution, um die Liste der Tab
 | 2025 | [Latest](Worksheet%20Functions/Vectorworks%202025%20US.md) | [Latest](Worksheet%20Functions/Vectorworks%202025%20DE.md) | -
 | 2024 | [Latest](Worksheet%20Functions/Vectorworks%202024%20US.md) | [Latest](Worksheet%20Functions/Vectorworks%202024%20DE.md) | -
 
+## CWD Plug-in Datenbank Parameter Übersicht
+
+Click on the version to see the list of DACH-PIO specific database fields.
+
+Klicken Sie auf die Version, um die Liste der DACH-PIO Datenbankfelder zu sehen.
+
+|  | Deutsch
+| --- | --- 
+| 2026 | [Aktuell](Worksheet%20Object%20Parameters/dach-pio-datenbankfelder%202026.md)
+| 2025 | [Aktuell](Worksheet%20Object%20Parameters/dach-pio-datenbankfelder%202025.md)
+
 ## Basic Information
 
 There are two basic types of functions: those that use the values you enter, and those that use information from objects in the drawing. The arguments required by the two function types are different.
