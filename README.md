@@ -10,7 +10,7 @@ Klicken Sie auf die entsprechende Version und Distribution, um die Liste der Tab
 | 2025 | [Latest](Worksheet%20Functions/Vectorworks%202025%20US.md) | [Latest](Worksheet%20Functions/Vectorworks%202025%20DE.md) | -
 | 2024 | [Latest](Worksheet%20Functions/Vectorworks%202024%20US.md) | [Latest](Worksheet%20Functions/Vectorworks%202024%20DE.md) | -
 
-## CWD Plug-in Datenbank Parameter Übersicht
+## Vectorworks Germany Plug-in Datenbank Parameter Übersicht
 
 Click on the version to see the list of DACH-PIO specific database fields.
 
