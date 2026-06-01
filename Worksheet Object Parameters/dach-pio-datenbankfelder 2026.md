@@ -2,7 +2,7 @@
 
 ## Build-Information
 
-> **Version:** Vectorworks 2026 Update 4 (Build 854846)
+> **Version:** Vectorworks 2026 Update 5 (Build 862586)
 
 _Klicken Sie auf ein Plug-in, um die zugehörigen Parameter ein- oder auszuklappen._
 
@@ -319,7 +319,7 @@ _Klicken Sie auf ein Plug-in, um die zugehörigen Parameter ein- oder auszuklapp
 | AdditionalInfo15 | Zusatz 15 | Text |
 | IsSimpleWindowWallOpening | Wandöffnung | Boolean |
 | WindowKind | Fensterart | Pop-Up |
-| IfcWindow_GlobalId | Bauteilnummer | Text |
+| IfcWindow_GlobalId | __NNA Obsolete IfcWindow_GlobalId former Bauteilnummer | Text |
 | IfcWindow_Name | Bezeichnung | Text |
 | IfcWindow_Description | Beschreibung | Text |
 | IfcWindow_ObjectType | Objekttyp | Text |
@@ -2367,7 +2367,7 @@ _Klicken Sie auf ein Plug-in, um die zugehörigen Parameter ein- oder auszuklapp
 | AdditionalInfo15 | Zusatz 15 | Text |
 | IsSimpleDoorWallOpening | Wandöffnung | Boolean |
 | DoorKind | Türart | Pop-Up |
-| IfcDoor_GlobalId | Bauteilnummer | Text |
+| IfcDoor_GlobalId | __NNA Obsolete IfcDoor_GlobalId former Bauteilnummer | Text |
 | IfcDoor_Name | Bezeichnung | Text |
 | IfcDoor_Description | Beschreibung | Text |
 | IfcDoor_ObjectType | Objekttyp | Text |
