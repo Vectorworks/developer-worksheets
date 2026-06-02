@@ -1,6 +1,6 @@
 Worksheet functions
 
-Based on Vectorworks 2026 Update 4 (Build 854846)
+Based on Vectorworks 2026 Update 5 (Build 862586)
 
 
 
@@ -533,7 +533,7 @@ Parameter 1:
 'Basisobjekt'
 
 Parameter 2:
-'Datenbankwert', 'isteingefügt', 'Bezeichnung', 'Beschreibung', 'Funktion', 'Aussenseite', 'Tragend', 'Feuerwiderstand', 'Brennbare Konstruktion', 'Brandmauer', 'Schalldämmung', 'Typ', 'Hersteller'
+'Datenbankwert', 'isteingefügt', 'Bezeichnung', 'Beschreibung', 'Funktion', 'Aussenseite', 'Tragend', 'Feuerwiderstand', 'Brennbare Konstruktion', 'Brandmauer', 'Schalldämmung', 'Typ', 'Hersteller', 'Stilname'
 
 Parameter 3 (nur verfügbar, wenn Parameter 2 = 'recordvalue'):
 'Name der verwendeten Datenbank'
@@ -1824,7 +1824,7 @@ Parameter 1:
 'basicobject'
 
 Parameter 2:
-'recordvalue', 'isinserted', 'mark', 'description', 'function', 'exterior', 'load bearing', 'fire rating', 'combustible construction', 'compartmentation', 'acoustic rating', 'model', 'manufacturer'
+'recordvalue', 'isinserted', 'mark', 'description', 'function', 'exterior', 'load bearing', 'fire rating', 'combustible construction', 'compartmentation', 'acoustic rating', 'model', 'manufacturer', 'stylename'
 
 Parameter 3 (nur verfügbar, wenn Parameter 2 = 'recordvalue'):
 <Name der verwendeten Datenbank>
@@ -1870,6 +1870,7 @@ Parameter 2:
 'acoustic rating'    
 'model'              
 'manufacturer'   
+'stylename' 
 
 Einer dieser Parameter bewirkt, dass der entsprechende Wert der Wand bzw. der IFC-Daten der Wand zurückgegeben wird.
 
@@ -1903,7 +1904,7 @@ so wird der Inhalt dieses Datenbankfeldes zurückgegeben.
 
 
 
-Übersetzungstabelle:
+Übersetzungstabelle (nicht automatisch erstellt und möglicherweise nicht aktuell):
 
 'basicobject' 		   = 'Basisobjekt' 
 
@@ -1919,11 +1920,12 @@ so wird der Inhalt dieses Datenbankfeldes zurückgegeben.
 'acoustic rating'          = 'Schalldämmung'
 'model'                    = 'Typ'
 'manufacturer'             = 'Hersteller'
+'stylename'                = 'Stilname'
 
 'recordvalue'              = 'Datenbankfeld'
 
 
-Eine vollständige und aktuelle Übersetzungstabelle aller verfügbaren Parameter aller Tabellenfunktionen in Vectorworks finden Sie in der Textdatei "WorksheetFunctionOptionsRegistry.txt", die beim Programmstart von Vectorworks automatisch angelegt und im Plug-Ins-Ordner des Benutzerordners gespeichert wird, sowie im Expertenreiter des Fenster- oder Türendialogs.
+Eine vollständige und aktuelle Übersetzungstabelle aller verfügbaren Parameter aller Tabellenfunktionen in Vectorworks finden Sie in der Textdatei "WorksheetFunctionOptionsRegistry.txt", die beim Programmstart von Vectorworks automatisch angelegt und im Plug-Ins-Ordner des Benutzerordners gespeichert wird, sowie im Expertenreiter des Fenster- oder Türendialogs. 
 
 
 
@@ -2278,6 +2280,12 @@ Gibt den Typ der Laibungsverkleidung zurück, sofern das Fenster eine besitzt.
 
 
 
+#### __Objektdaten('usedcutplane')__ ####
+
+Gibt zurück, ob das Fenster für die Darstellung in 2D Draufsicht die Ebenenschnitthöhe, die Schnitthöhe der Wand oder eine individuelle Schnitthöhe verwendet.
+
+
+
 #### __Objektdaten('UseWallClosure')__ ####
 
 Gibt einen Booleschen Wert zurück. Dieser ist wahr, wenn das Objekt die Laibungseinstellungen der Wand verwendet, andernfalls falsch.
@@ -2408,6 +2416,12 @@ Gibt das Rohmaß Breite zurück. Das Rohmaß ist definiert als Fertigmaß + Übe
 #### __Höhe()__ ####
 
 Gibt diejenige Höhe des Fensters zurück, die im Reiter 'Fenstergröße' eingestellt ist. Bitte beachten Sie, dass dies möglicherweise nicht diejenige Höhe ist, die in Bemaßungen oder Beschriftungen angezeigt wird.
+
+
+
+#### __Höhe('cutplane')__ ####
+
+Gibt die Höhe der Schnittebene des Fensters in Bezug auf die Ebenenbasishöhe zurück. Verwendet das Fenster die Schnitthöhe der Wand, in die es eingefügt ist, wird stattdessen die Schnitthöhe der Wand zurückgegeben. Verwendet diese Wand die Schnitthöhe der Ebene, wird stattdessen die Schnitthöhe der Ebene zurückgegeben.
 
 
 
@@ -3366,7 +3380,7 @@ Platte: Gesamte Oberfläche aller Seiten der Platte.
 
 #### __Objektdaten('eval equipment item'; '<Datenbank>'; '<Feldname>')__ ####
 
-Gibt den Parameter oder den Datenbankeintrag vom entsprechenden Equipment-Objekt des Geräts.(Schweiz: Objektdaten('eval equipment item',
+Gibt den Parameter oder den Datenbankeintrag vom entsprechenden Equipment-Objekt oder Rackrahmen des Geräts.
 
 
 
@@ -4297,7 +4311,7 @@ Parameter 1:
 'basicobject'
 
 Parameter 2:
-'recordvalue', 'isinserted', 'mark', 'description', 'function', 'exterior', 'load bearing', 'fire rating', 'combustible construction', 'compartmentation', 'acoustic rating', 'model', 'manufacturer'
+'recordvalue', 'isinserted', 'mark', 'description', 'function', 'exterior', 'load bearing', 'fire rating', 'combustible construction', 'compartmentation', 'acoustic rating', 'model', 'manufacturer', 'stylename'
 
 Parameter 3 (nur verfügbar, wenn Parameter 2 = 'recordvalue'):
 <Name der verwendeten Datenbank>
@@ -4325,7 +4339,7 @@ Parameter 1:
 
 'basicobject'
 
-Dieser Parameter bewirkt, dass die Werte des übergeordneten Objekts (in diesem Fall der Wand) und nicht des Fensters selbst zurückgegeben werden.
+Dieser Parameter bewirkt, dass die Werte des übergeordneten Objekts (in diesem Fall der Wand) und nicht der Tür selbst zurückgegeben werden.
 
 
 
@@ -4342,6 +4356,7 @@ Parameter 2:
 'acoustic rating'    
 'model'              
 'manufacturer'   
+'stylename' 
 
 Einer dieser Parameter bewirkt, dass der entsprechende Wert der Wand bzw. der IFC-Daten der Wand zurückgegeben wird.
 
@@ -4375,7 +4390,7 @@ so wird der Inhalt dieses Datenbankfeldes zurückgegeben.
 
 
 
-Übersetzungstabelle:
+Übersetzungstabelle (nicht automatisch erstellt und möglicherweise nicht aktuell):
 
 'basicobject' 		   = 'Basisobjekt' 
 
@@ -4391,6 +4406,7 @@ so wird der Inhalt dieses Datenbankfeldes zurückgegeben.
 'acoustic rating'          = 'Schalldämmung'
 'model'                    = 'Typ'
 'manufacturer'             = 'Hersteller'
+'stylename'                = 'Stilname'
 
 'recordvalue'              = 'Datenbankfeld'
 
@@ -4745,27 +4761,84 @@ Gibt den Typ der Laibungsverkleidung zurück, sofern die Tür eine besitzt.
 
 
 
+#### __Objektdaten('usedcutplane')__ ####
+
+Gibt zurück, ob die Tür für die Darstellung in 2D Draufsicht die Ebenenschnitthöhe, die Schnitthöhe der Wand oder eine individuelle Schnitthöhe verwendet.
+
+
+
 #### __Objektdaten('UseWallClosure')__ ####
 
 Gibt einen Booleschen Wert zurück. Dieser ist wahr, wenn das Objekt die Laibungseinstellungen der Wand verwendet, andernfalls falsch.
 
 
 
-#### __Objektdaten('WinDoorHandleType'[;<Nr. des Türblatts>][; <Side>])__ ####
+#### __Objektdaten('WinDoorHandleType' [; Parameter 2] [; Parameter 3])__ ####
 
 Gibt den Typ des Türgriffs eines Türblatts zurück. Falls in 3D ein Symbol als Türgriff angezeigt wird, wird der Name des Symbols zurückgegeben.
 
-Aufruf: =Objektdaten('Grifftyp'[; <Nr. des Türblatts>][; <Türseite>]])
+Parameter 1: 'WinDoorHandleType'
+
+Parameter 2: <Nr. des Türblatts>
+
+Parameter 3: <Seite der Tür>
+
+Aufruf: =Objektdaten('Grifftyp'[; <Nr. des Türblatts>][; <Türseite>])
 
       Nr. des Türblatts: von innen gesehen von links nach rechts.
 
       Türseite: 'Innen' (Innenseite) oder 'Aussen' (Außenseite).
+
+
 Beispiel: =Objektdaten('Grifftyp';'1';'innen')
 
 Wird die Nummer des Türblatts weggelassen und die Türblätter haben verschiedene Grifftypen, kann kein eindeutiger Grifftyp ermittelt werden.
-Falls auch noch die Türseite weggelassen wird, müssen alle Tügrifftypen innen und außen an allen Türblättern gleich sein, um einen eindeutigen Rückgabewert zu erhalten.
+Falls auch noch die Türseite weggelassen wird, müssen alle Türgrifftypen innen und außen an allen Türblättern gleich sein, um einen eindeutigen Rückgabewert zu erhalten.
 
 
+```python
+Beispiele: 
+
+=Objektdaten('windoorhandletype';'1','Innen')
+=Objektdaten('Grifftyp';'2')
+
+
+Die Funktion gibt den Typ des Türgriffs eines Türblatts zurück. Falls in 3D ein Symbol als Türgriff angezeigt wird, wird der Name des Symbols zurückgegeben.
+
+Der zweite Parameter ist die Nummer des Türblatts, von innen gesehen von links nach rechts.
+
+Der dritte Parameter ist die Seite des Türblatts, entweder 'Innen' oder 'Aussen'.
+
+Der zweite und / oder der dritte Parameter können entfallen. 
+
+Wird die Nummer des Türblatts weggelassen und die Türblätter haben verschiedene Grifftypen, kann kein eindeutiger Grifftyp ermittelt werden.
+
+Falls auch noch die Türseite weggelassen wird, müssen alle Türgrifftypen innen und außen an allen Türblättern gleich sein, um einen eindeutigen Rückgabewert zu erhalten.
+
+
+
+Für Funktionsnamen und Parameter stehen auch deutsche Übersetzungen zur Verfügung.
+Es wird aber empfohlen, die englischen Bezeichnungen zu verwenden.
+
+
+Hier die Zuordnungen der deutschen zu den englischen Bezeichnungen:
+
+'windoorhandletype' = 'Grifftyp'
+
+Seiten:
+
+'inside' = 'Innen';
+'outside' = 'Aussen';
+
+
+
+Eine vollständige und aktuelle Übersetzungstabelle aller verfügbaren Parameter aller Tabellenfunktionen in Vectorworks finden Sie in der Textdatei "WorksheetFunctionOptionsRegistry.txt", die beim Programmstart von Vectorworks automatisch angelegt und im Plug-Ins-Ordner des Benutzerordners gespeichert wird, sowie im Expertenreiter des Fenster- oder Türendialogs.
+
+
+
+
+
+```
 
 #### __Dicke('Reveal'[;<left|right|top|bottom>])__ ####
 
@@ -4890,6 +4963,12 @@ Gibt das Bekleidungsaußenmaß an der Bandgegenseite der Tür zurück. Eine bild
 #### __Höhe()__ ####
 
 Gibt diejenige Höhe der Tür zurück, die im Reiter 'Türhöhe' eingestellt ist. Bitte beachten Sie, dass dies möglicherweise nicht diejenige Höhe ist, die in Bemaßungen oder Beschriftungen angezeigt wird.
+
+
+
+#### __Höhe('cutplane')__ ####
+
+Gibt die Höhe der Schnittebene der Tür in Bezug auf die Ebenenbasishöhe zurück. Verwendet die Tür die Schnitthöhe der Wand, in die sie eingefügt ist, wird stattdessen die Schnitthöhe der Wand zurückgegeben. Verwendet diese Wand die Schnitthöhe der Ebene, wird stattdessen die Schnitthöhe der Ebene zurückgegeben.
 
 
 
