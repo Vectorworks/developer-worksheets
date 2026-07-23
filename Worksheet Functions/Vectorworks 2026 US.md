@@ -1,6 +1,6 @@
 Worksheet functions
 
-Based on Vectorworks 2026 Update 5 (Build 862586)
+Based on Vectorworks 2026 Update 6 (Build 872399)
 
 
 
