@@ -1,6 +1,6 @@
 Worksheet functions
 
-Based on Vectorworks 2026 Update 5 (Build 862586)
+Based on Vectorworks 2026 Update 6 (Build 872399)
 
 
 
@@ -89,7 +89,7 @@ Führt ein Python-Script mit dem Namen 'ScriptFile.py' im Ordner 'Vectorworks Pl
 
 #### __FELDFORMAT('Datenbank'; 'Feldname')__ ####
 
-Gibt den Basiswert eines bestimmten Datenfeldes der verknüpften Datenbank zurück.
+Gibt den Vorgabewert eines bestimmten Datenfeldes der verknüpften Datenbank zurück.
 
 
 ```python
