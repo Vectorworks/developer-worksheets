@@ -2,7 +2,7 @@
 
 ## Build-Information
 
-> **Version:** Vectorworks 2026 Update 5 (Build 862586)
+> **Version:** Vectorworks 2026 Update 6 (Build 872399)
 
 _Klicken Sie auf ein Plug-in, um die zugehörigen Parameter ein- oder auszuklappen._
 
