@@ -1,6 +1,6 @@
 Worksheet functions
 
-Based on Vectorworks 2026 Update 6 (Build 872399)
+Based on Vectorworks 2026 Update 7 (Build 879357)
 
 
 
@@ -264,6 +264,16 @@ Returns the name of the active worksheet.
 
 ```python
 =ActiveWorksheet returns the name of the active worksheet in which the function is being called.
+```
+
+#### __ProjectElevation()__ ####
+
+Returns the Project Elevation value.
+
+
+```python
+=ProjectElevation()	returns Project Elevation Value.
+
 ```
 
 ## Logic
