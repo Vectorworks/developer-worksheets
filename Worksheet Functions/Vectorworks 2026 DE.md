@@ -1,6 +1,6 @@
 Worksheet functions
 
-Based on Vectorworks 2026 Update 6 (Build 872399)
+Based on Vectorworks 2026 Update 7 (Build 879763)
 
 
 
@@ -169,6 +169,16 @@ Gibt den Namen der aktiven Tabelle zurück.
 
 ```python
 =ActiveWorksheet returns the name of the active worksheet in which the function is being called.
+```
+
+#### __Projekthöhe()__ ####
+
+Gibt den Wert der Projekthöhe zurück.
+
+
+```python
+=Projekthöhe()	Gibt den Wert der Projekthöhe zurück.
+
 ```
 
 ## Datum/Zeit
@@ -8179,7 +8189,7 @@ Beispiele:
 
 Bei einem Objekt gibt die Funktion den angegebenen <Wert> der Schicht des Objekts mit dem angegebenen <Schichtindex> zurück, oder die Kernschicht, wenn <Schichtindex> fehlt. Wird die Funktion für eine Schicht aufgerufen, gibt sie den angegebenen <Wert> für diese Schicht zurück. Wenn der optionale <Schichtindex> hinzugefügt wird, gibt die Funktion den Schichtwert nur für Schichten zurück, die mit dem angegebenen Index übereinstimmen.
 
-Die folgenden Werte werden unterstützt: "Name", "Funktion", "Klasse", "Klassenbezeichnung", "Klassenbeschreibung", "Dicke", "Lambda", "Wert", "Nettofläche", "Nettovolumen".
+Die folgenden Werte werden unterstützt: "Name", "Funktion", "Klasse", "Klassenbezeichnung", "Klassenbeschreibung", "Dicke", "Lambda", "U-Wert", "R-Wert", "Nettofläche", "Nettovolumen".
 
 Siehe das Beispiel für weitere Details.
 
@@ -11345,7 +11355,12 @@ Gibt WAHR zurück, wenn das Objekt in der angegebenen Phase vorhanden ist.
 
 #### __PhaseIfcStatus('Phasenname')__ ####
 
-Gibt den IFC-Status für die Objekte in der angegebenen Phase zurück, auf die der Filter verweist. Objekte werden als NEU (das Objekt wird in dieser Phase erzeugt ABBRUCH (das Objekt wird in dieser Phase entfernt) oder VORHANDEN (das Objekt wurde zuvor erzeugt und in dieser Phase nicht entfernt) klassifiziert. Objekte, für die die Option "Temporär" aktiviert ist, werden als TEMPORÄR klassifiziert. Die erste Phase bildet eine Ausnahme: Sie enthält nur VORHANDENE Objekte.
+Gibt den IFC-Status für die Objekte in der angegebenen Phase zurück, auf die der Filter verweist.
+Objekte werden als NEU (das Objekt wird in dieser Phase erzeugt.
+ABBRUCH (das Objekt wird in dieser Phase entfernt) oder
+VORHANDEN (das Objekt wurde zuvor erzeugt und in dieser Phase nicht entfernt) klassifiziert.
+Objekte, für die die Option "Temporär" aktiviert ist, werden als TEMPORÄR klassifiziert.
+Die erste Phase bildet eine Ausnahme: Sie enthält nur VORHANDENE Objekte.
 
 
 ```python
