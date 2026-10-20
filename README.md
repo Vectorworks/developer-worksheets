@@ -6,7 +6,7 @@ Klicken Sie auf die entsprechende Version und Distribution, um die Liste der Tab
 
 |  | International | Deutsch | 日本語
 | --- | --- | --- | ---
-| 2027 | [Latest](Worksheet%20Functions/Vectorworks%202027%20US.md) | - | -
+| 2027 | [Latest](Worksheet%20Functions/Vectorworks%202027%20US.md) | [Latest](Worksheet%20Functions/Vectorworks%202027%20DE.md) | -
 | 2026 | [Latest](Worksheet%20Functions/Vectorworks%202026%20US.md) | [Latest](Worksheet%20Functions/Vectorworks%202026%20DE.md) | [最新](Worksheet%20Functions/Vectorworks%202026%20JA.md)
 | 2025 | [Latest](Worksheet%20Functions/Vectorworks%202025%20US.md) | [Latest](Worksheet%20Functions/Vectorworks%202025%20DE.md) | -
 | 2024 | [Latest](Worksheet%20Functions/Vectorworks%202024%20US.md) | [Latest](Worksheet%20Functions/Vectorworks%202024%20DE.md) | -
@@ -18,7 +18,7 @@ Click on the version to see the list of DACH-PIO specific database fields.
 Klicken Sie auf die Version, um die Liste der DACH-PIO Datenbankfelder zu sehen.
 
 |  | Deutsch
-| --- | --- 
+| 2027 | [Aktuell](Worksheet%20Object%20Parameters/dach-pio-datenbankfelder%202027.md)
 | 2026 | [Aktuell](Worksheet%20Object%20Parameters/dach-pio-datenbankfelder%202026.md)
 | 2025 | [Aktuell](Worksheet%20Object%20Parameters/dach-pio-datenbankfelder%202025.md)
 
