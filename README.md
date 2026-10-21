@@ -1,8 +1,8 @@
 ## Worksheet Functions
 
-Click on the appropirate version and distribution to see the worksheet functions list for it.
+Click on the appropriate version and distribution to see the worksheet functions list for it.
 
-Klicken Sie auf die entsprechende Version und Distribution, um die Liste der Tabellenfunktionen dafür zu sehen.
+Klicken Sie auf die entsprechende Version und Distribution, um die Liste der Tabellenfunktionen anzuzeigen.
 
 |  | International | Deutsch | 日本語
 | --- | --- | --- | ---
@@ -13,11 +13,12 @@ Klicken Sie auf die entsprechende Version und Distribution, um die Liste der Tab
 
 ## Vectorworks Germany Plug-in Datenbank Parameter Übersicht
 
-Click on the version to see the list of DACH-PIO specific database fields.
+Click on the version to see the list of DACH-PIO-specific database fields.
 
-Klicken Sie auf die Version, um die Liste der DACH-PIO Datenbankfelder zu sehen.
+Klicken Sie auf die Version, um die Liste der DACH-PIO-Datenbankfelder zu sehen.
 
-|  | Deutsch
+|  | Deutsch |
+|--- | --- |
 | 2027 | [Aktuell](Worksheet%20Object%20Parameters/dach-pio-datenbankfelder%202027.md)
 | 2026 | [Aktuell](Worksheet%20Object%20Parameters/dach-pio-datenbankfelder%202026.md)
 | 2025 | [Aktuell](Worksheet%20Object%20Parameters/dach-pio-datenbankfelder%202025.md)
